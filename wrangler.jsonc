@@ -1,6 +1,6 @@
 {
   // Sito statico dei Bolliti: Cloudflare pubblica la cartella "public" così com'è.
-  "name": "bolliti",
+  "name": "bollitidialmenno-webapp",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./public"
