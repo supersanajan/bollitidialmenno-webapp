@@ -307,13 +307,14 @@
       return '<div class="period"><div class="up">' + (d > 0 ? '<div class="bar" style="height:' + hgt + 'px"></div>' : '') + '</div><div class="axis"></div><div class="down">' + (d < 0 ? '<div class="bar" style="height:' + hgt + 'px"></div>' : '') + '</div>' +
         '<span class="d' + (d > 0 ? ' gold' : '') + '">' + signed(d) + '</span><span>' + periodName(i) + ' · ' + b + '–' + o + '</span></div>';
     });
-    h += '<section class="card"><span class="lbl">Andamento · scarto a fine periodo</span><div class="periods" style="--n:' + cols.length + '">' + cols.join('') + '</div>' + quartersTable(g) + '</section>';
+    var andamentoHtml = '<section class="card"><span class="lbl">Andamento · scarto a fine periodo</span><div class="periods" style="--n:' + cols.length + '">' + cols.join('') + '</div>' + quartersTable(g) + '</section>';
 
     if (g.recap && g.recap.moments && g.recap.moments.length) {
       h += '<section class="card" style="gap:4px"><span class="lbl" style="margin-bottom:10px">Momenti chiave</span>' +
         g.recap.moments.map(function (m) { return '<div class="moment"><span class="mk"><span class="d">' + esc(m.q || '•') + '</span><i></i></span><p>' + esc(m.text || m) + '</p></div>'; }).join('') +
         igLink(g.recap.instagram_post, igOk(g.recap.instagram_post) ? 'Il resoconto completo su Instagram' : 'I resoconti su Instagram') + '</section>';
     }
+    h += andamentoHtml;
 
     var rows = g.stats.filter(function (s) { return !s.dnp; }).sort(function (a, b2) { return b2.pts - a.pts || a.n - b2.n; });
     var tot = { p2: 0, p3: 0, ft: 0, pf: 0 };
