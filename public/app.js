@@ -375,7 +375,7 @@
   var cat = 'punti';
   function stagione() {
     var cats = {
-      punti: { label: 'PUNTI', key: 'ppg', fmt: f1, note: function (r) { return r.pts + ' punti in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Media punti per partita giocata, così chi salta qualche gara non è penalizzato.' },
+      punti: { label: 'PUNTI', key: 'ppg', fmt: f1, note: function (r) { return r.pts + ' punti in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
       triple: { label: 'TRIPLE', key: 'p3', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Triple segnate in totale. Il referto registra solo quelle a segno.' },
       liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Tiri liberi segnati. Le percentuali arrivano solo dalle partite con i dati dell’app.' }
     };
@@ -383,7 +383,7 @@
     var h = '<header class="pagehead"><span class="lbl">Dopo ' + S.n + ' giornate su ' + DB.schedule.length + '</span><h1>STATISTICHE</h1></header>';
     h += '<section class="card" style="padding:16px"><div class="seg on-dark" role="tablist" aria-label="Classifica">' + Object.keys(cats).map(function (k) {
       return '<button role="tab" data-cat="' + k + '" aria-selected="' + (k === cat) + '">' + cats[k].label + '</button>';
-    }).join('') + '</div><span class="small" style="padding:0 4px">' + c.cap + '</span><div class="list">' + rows.map(function (r, i) {
+    }).join('') + '</div>' + (c.cap ? '<span class="small" style="padding:0 4px">' + c.cap + '</span>' : '') + '<div class="list">' + rows.map(function (r, i) {
       return '<a class="lb" href="#giocatore-' + r.id + '"><span class="pos">' + (i + 1) + '</span><span class="mid"><span class="row-between"><span style="font-size:15px;font-weight:600">' + esc(nick(r.id)) + ' <span class="small">#' + P[r.id].number + '</span></span><span class="small" style="font-size:12px">' + c.note(r) + '</span></span><span class="track"><span class="fill" style="display:block;width:' + Math.round(r[c.key] / max * 100) + '%"></span></span></span><span class="val">' + c.fmt(r[c.key]) + '</span></a>';
     }).join('') + '</div></section>';
 
