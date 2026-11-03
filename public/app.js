@@ -209,7 +209,7 @@
     }
 
     var form = S.G.slice(-5);
-    h += '<section class="card"><div class="row-between" style="align-items:flex-end"><div><div class="lbl">Bilancio</div><div class="d" style="font-size:68px">' + S.W + '–' + S.L + '</div></div>' +
+    h += '<section class="card"><div class="row-between" style="align-items:flex-end"><div><div class="lbl">Bilancio</div><div class="d bal-num" style="font-size:clamp(52px,17vw,68px)">' + S.W + '–' + S.L + '</div></div>' +
       '<div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px"><span class="small" style="font-size:12px">Forma, dalla più vecchia</span><div style="display:flex;gap:6px">' + form.map(resChip).join('') + '</div></div></div>' +
       '<div class="grid3"><div class="tile"><span class="d">' + f1(S.pf / S.n) + '</span><span>punti fatti</span></div><div class="tile"><span class="d">' + f1(S.pa / S.n) + '</span><span>punti subiti</span></div><div class="tile"><span class="d">' + f1(S.p3 / S.n) + '</span><span>triple a partita</span></div></div>' +
       (ME ? '<a class="li" href="#classifica" style="border-top:1px solid var(--line);border-bottom:0;padding-top:14px"><span class="d gold" style="font-size:40px;width:auto">' + ord(ME.pos) + '</span><span class="grow"><span class="name">in classifica · ' + ME.pts + ' punti</span><span class="small" style="font-size:12px">Aggiornata al ' + dLong(ST.updated) + '</span></span>' + ICON.arrow + '</a>' : '') +
@@ -250,7 +250,7 @@
     var atk = ST.rows.slice().sort(function (a, b) { return b.pf - a.pf; }).indexOf(ME) + 1;
     var def = ST.rows.slice().sort(function (a, b) { return a.pa - b.pa; }).indexOf(ME) + 1;
     h += '<section class="card"><div style="display:flex;align-items:flex-end;gap:14px"><span class="d gold" style="font-size:80px;line-height:.85">' + ord(ME.pos) + '</span><div style="display:flex;flex-direction:column;gap:2px;padding-bottom:4px"><span class="d" style="font-size:26px">POSIZIONE</span><span class="small" style="color:var(--muted)">dopo la ' + ST.after_round + 'ª giornata</span></div></div>' +
-      '<div class="grid3"><div class="tile"><span class="d">' + ord(atk) + '</span><span>attacco del girone</span></div><div class="tile"><span class="d">' + ord(def) + '</span><span>difesa del girone</span></div><div class="tile"><span class="d" style="font-size:26px;white-space:nowrap">' + ME.pf + '–' + ME.pa + '</span><span>punti fatti e subiti</span></div></div></section>';
+      '<div class="grid3"><div class="tile"><span class="d">' + ord(atk) + '</span><span>attacco del girone</span></div><div class="tile"><span class="d">' + ord(def) + '</span><span>difesa del girone</span></div><div class="tile"><span class="d" style="font-size:clamp(17px,4.9vw,26px);white-space:nowrap">' + ME.pf + '–' + ME.pa + '</span><span>punti fatti e subiti</span></div></div></section>';
     h += '<section class="card" style="padding:14px 10px;gap:0"><div class="box-wrap"><div class="st head"><span>#</span><span>Squadra</span><span>PT</span><span>V–P</span><span>+/−</span></div>' +
       ST.rows.map(function (r) {
         return '<div class="st' + (r.us ? ' us' : '') + '"><span class="d">' + r.pos + '</span><span class="team">' + esc(r.team) + '</span><span class="d">' + r.pts + '</span><span>' + r.w + '–' + r.l + '</span><span>' + signed(r.pf - r.pa) + '</span></div>';
@@ -352,7 +352,7 @@
       var r = S.ps[p.id], off = !!p.out;
       return '<a class="pcard' + (off ? ' off' : '') + '" href="#giocatore-' + p.id + '"><span class="top-band ' + (off ? 'rombi-grey' : 'rombi') + '"><span class="d">' + p.number + '</span></span>' +
         '<span class="info"><span class="pname"><span class="d">' + esc(p.nickname.toUpperCase()) + '</span>' +
-        (p.role === 'capitano' ? '<span class="pill gold rbadge" title="Capitano">CAPITANO</span>' : p.role === 'vice' ? '<span class="pill gold rbadge" title="Vicecapitano">VICECAP</span>' : '') + '</span>' +
+        (p.role === 'capitano' ? '<span class="pill gold rbadge" title="Capitano">CAP</span>' : p.role === 'vice' ? '<span class="pill gold rbadge" title="Vicecapitano">VICECAP</span>' : '') + '</span>' +
         (off ? '<span class="pout">Non disponibile</span>' : '') +
         (r.gp ? '<span class="stat"><span class="statlbl">Media punti</span><span class="stat-row"><span class="d">' + f1(r.ppg) + '</span><span>in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + '</span></span></span>'
               : (role_or_out(p) ? '' : '<span class="pnone">Nessuna partita giocata</span>')) +

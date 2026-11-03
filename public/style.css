@@ -424,3 +424,22 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 /* Badge capitano/vice accanto al nome nel roster */
 .pcard .info .pname { display: flex; align-items: center; gap: 6px; min-width: 0; }
 .pill.rbadge { font-size: 11px; padding: 2px 7px; letter-spacing: 0.06em; flex-shrink: 0; }
+
+/* Schermi stretti (iPhone SE, Android piccoli) */
+.st { grid-template-columns: 28px minmax(0, 1fr) 34px 44px 46px; }
+.next .box .d { font-size: clamp(20px, 6.6vw, 26px); }
+.bal-num { white-space: nowrap; }
+.tile .d { font-size: clamp(24px, 8.6vw, 34px); }
+.grid4 .tile .d { white-space: nowrap; }
+@media (max-width: 374px) {
+  .tb { grid-template-columns: minmax(0, 1fr) 30px 24px 24px 24px 22px; gap: 3px; padding: 9px 2px; font-size: 13px; }
+  .tb .who { gap: 5px; }
+  .tb .who .n { width: 20px; font-size: 15px; }
+  .card { padding-left: 14px; padding-right: 14px; }
+  .tile { padding: 10px 8px; }
+  .grid2, .grid3, .grid4 { gap: 6px; }
+  .grid4 .tile .d { font-size: clamp(20px, 7vw, 26px); }
+  .st { grid-template-columns: 24px minmax(0, 1fr) 30px 40px; gap: 4px; padding: 9px 4px; font-size: 14px; }
+  .st > span:nth-child(5) { display: none; }
+  .tile .d[style*="font-size:24px"] { font-size: 19px !important; }
+}
