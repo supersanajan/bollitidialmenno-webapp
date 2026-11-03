@@ -307,7 +307,7 @@
       return '<div class="period"><div class="up">' + (d > 0 ? '<div class="bar" style="height:' + hgt + 'px"></div>' : '') + '</div><div class="axis"></div><div class="down">' + (d < 0 ? '<div class="bar" style="height:' + hgt + 'px"></div>' : '') + '</div>' +
         '<span class="d' + (d > 0 ? ' gold' : '') + '">' + signed(d) + '</span><span>' + periodName(i) + ' · ' + b + '–' + o + '</span></div>';
     });
-    var andamentoHtml = '<section class="card"><span class="lbl">Andamento · scarto a fine periodo</span><div class="periods" style="--n:' + cols.length + '">' + cols.join('') + '</div>' + quartersTable(g) + '</section>';
+    var andamentoHtml = '<section class="card"><span class="lbl">Andamento</span>' + quartersTable(g) + '<span class="small" style="font-size:12px;margin-top:6px">Scarto a fine periodo</span><div class="periods" style="--n:' + cols.length + '">' + cols.join('') + '</div></section>';
 
     if (g.recap && g.recap.moments && g.recap.moments.length) {
       h += '<section class="card" style="gap:4px"><span class="lbl" style="margin-bottom:10px">Momenti chiave</span>' +
