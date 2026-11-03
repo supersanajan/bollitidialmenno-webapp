@@ -536,7 +536,7 @@
 
   function sponsorCta() {
     var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
-    return '<section class="card rombi cta"><span class="d" style="font-size:40px;line-height:.95">VUOI DIVENTARE SPONSOR?</span><p>Il tuo nome qui, sulle maglie o sul tavolo del prossimo banchetto. Siamo una squadra di amici, ma i rimbalzi li prendiamo sul serio.</p><div class="cta-btns"><a class="btn dark" href="' + esc(IG) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici su Instagram</a><a class="btn ghost-dark" href="mailto:jan.sana.1996@gmail.com?subject=Sponsor%20Bolliti">Scrivi una mail</a></div></section>';
+    return '<section class="card rombi cta"><span class="d" style="font-size:40px;line-height:.95">VUOI DIVENTARE SPONSOR?</span><p>Il tuo nome qui, sulle maglie o sul tavolo del prossimo banchetto. Siamo una squadra di amici, ma i rimbalzi li prendiamo sul serio.</p><div class="cta-btns"><a class="btn dark" href="' + esc(IG) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici su Instagram</a><a class="btn ghost-dark" href="mailto:ibollitidialmenno@gmail.com?subject=Sponsor%20Bolliti">Scrivi una mail</a></div></section>';
   }
   function sponsorPage() {
     var L = DB.sponsors || [];
