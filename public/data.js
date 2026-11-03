@@ -1702,6 +1702,13 @@ window.BOLLITI = {
    }
   ]
  },
+ "sponsors": [
+  {
+   "id": "la-fioreria",
+   "name": "La Fioreria",
+   "instagram": "https://www.instagram.com/lafioreria.alme/"
+  }
+ ],
  "_photos": [
   "banchetto-1",
   "banchetto-1-2",

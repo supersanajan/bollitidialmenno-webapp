@@ -234,6 +234,7 @@
         (pend.length ? '<div class="small">In attesa del giudizio: ' + pend.map(function (b) { return esc(nick(b.chef)); }).join(', ') + '</div>' : '') +
         (function () { var c = debtCount(); return '<a class="li" href="#banchetti" style="border-top:1px solid var(--line);border-bottom:0;padding-top:14px"><span class="gold">' + ICON.beer + '</span><span class="grow"><span class="name">Debiti in sospeso</span><span class="small" style="font-size:12px">' + c.banchetto + (c.banchetto === 1 ? ' banchetto' : ' banchetti') + ' · ' + c.cassa + (c.cassa === 1 ? ' cassa di birra' : ' casse di birra') + '</span></span><span class="d" style="font-size:32px">' + (c.banchetto + c.cassa) + '</span></a>'; })() + '</section>';
     }
+    h += sponsorStrip();
     return h;
   }
 
@@ -532,6 +533,30 @@
     return h;
   }
 
+
+  function sponsorCta() {
+    var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
+    return '<section class="card rombi cta"><span class="d" style="font-size:40px;line-height:.95">VUOI DIVENTARE SPONSOR?</span><p>Il tuo nome qui, sulle maglie o sul tavolo del prossimo banchetto. Siamo una squadra di amici, ma i rimbalzi li prendiamo sul serio.</p><div class="cta-btns"><a class="btn dark" href="' + esc(IG) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici su Instagram</a><a class="btn ghost-dark" href="mailto:jan.sana.1996@gmail.com?subject=Sponsor%20Bolliti">Scrivi una mail</a></div></section>';
+  }
+  function sponsorPage() {
+    var L = DB.sponsors || [];
+    var h = '<header class="pagehead"><h1>SPONSOR</h1><span class="muted" style="font-size:14px">Grazie a chi ci sostiene, dentro e fuori dal campo.</span></header>';
+    h += '<div class="spons">' + L.map(function (sp) {
+      var url = sp.link || sp.instagram;
+      var handle = sp.instagram ? '@' + sp.instagram.replace(/\/+$/, '').split('/').pop() : '';
+      var inner = (sp.logo ? '<span class="sp-logo"><img src="' + esc(sp.logo) + '" alt="Logo ' + esc(sp.name) + '" loading="lazy"></span>' : '<span class="sp-logo txt"><span class="d">' + esc(sp.name.toUpperCase()) + '</span></span>') +
+        '<span class="sp-body"><span class="name">' + esc(sp.name) + '</span>' + (sp.note ? '<span class="small">' + esc(sp.note) + '</span>' : '') + (handle ? '<span class="small gold">' + esc(handle) + '</span>' : '') + '</span>';
+      return url ? '<a class="card sp" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="card sp">' + inner + '</div>';
+    }).join('') + '</div>';
+    return h + sponsorCta();
+  }
+  function sponsorStrip() {
+    var L = DB.sponsors || [];
+    if (!L.length) return '';
+    return '<section class="card"><div class="row-between"><span class="lbl">Grazie ai nostri sponsor</span><a class="link" href="#sponsor">Diventa sponsor</a></div><div class="chips">' +
+      L.map(function (sp) { return '<a class="chip sp-chip" href="#sponsor">' + esc(sp.name) + '</a>'; }).join('') + '</div></section>';
+  }
+
   /* ---------- router ---------- */
   function section(h) {
     if (!h) return 'home';
@@ -552,6 +577,7 @@
     else if (h === 'statistiche' || h === 'stagione') html = stagione();
     else if (h === 'banchetti') html = banchetti();
     else if (h === 'info') html = info();
+    else if (h === 'sponsor') html = sponsorPage();
     else html = home();
     app.innerHTML = html;
     var page = !h ? 'home' : h.indexOf('partita-') === 0 ? 'partita' : h.indexOf('giocatore-') === 0 ? 'giocatore' : (h === 'bolliti' ? 'roster' : h === 'stagione' ? 'statistiche' : h);
@@ -560,7 +586,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       if (t.getAttribute('data-tab') === sec) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
     });
-    var titles = { home: 'Bolliti Almenno', partite: 'Partite · Bolliti', roster: 'Roster · Bolliti', statistiche: 'Statistiche · Bolliti', banchetti: 'Banchetti · Bolliti', info: 'Info · Bolliti' };
+    var titles = { home: 'Bolliti Almenno', partite: 'Partite · Bolliti', roster: 'Roster · Bolliti', statistiche: 'Statistiche · Bolliti', banchetti: 'Banchetti · Bolliti', info: 'Info · Bolliti', sponsor: 'Sponsor · Bolliti' };
     document.title = titles[sec] || 'Bolliti Almenno';
     if (!keepScroll) window.scrollTo(0, 0);
   }
