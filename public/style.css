@@ -417,3 +417,6 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 .btn.ghost-dark:hover { background: rgba(13,13,12,.08); color: var(--ink); }
 .btn .ico { width: 18px; height: 18px; }
 .chip.sp-chip { text-decoration: none; }
+
+.sp-mini { width: 72px; height: 72px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.sp-mini img { width: 100%; height: 100%; object-fit: contain; padding: 6px; box-sizing: border-box; }

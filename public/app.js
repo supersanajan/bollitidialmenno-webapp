@@ -554,7 +554,7 @@
     var L = DB.sponsors || [];
     if (!L.length) return '';
     return '<section class="card"><div class="row-between"><span class="lbl">Grazie ai nostri sponsor</span><a class="link" href="#sponsor">Diventa sponsor</a></div><div class="chips">' +
-      L.map(function (sp) { return '<a class="chip sp-chip" href="#sponsor">' + esc(sp.name) + '</a>'; }).join('') + '</div></section>';
+      L.map(function (sp) { return sp.logo ? '<a class="sp-mini" href="#sponsor" style="' + (sp.logo_bg ? 'background:' + esc(sp.logo_bg) : '') + '" title="' + esc(sp.name) + '"><img src="' + esc(sp.logo) + '" alt="' + esc(sp.name) + '" loading="lazy"></a>' : '<a class="chip sp-chip" href="#sponsor">' + esc(sp.name) + '</a>'; }).join('') + '</div></section>';
   }
 
   /* ---------- router ---------- */
