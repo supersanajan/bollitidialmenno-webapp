@@ -392,3 +392,6 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 .card.info strong { color: var(--fg); font-weight: 600; }
 .card.info a { color: var(--gold); font-weight: 600; }
 .card.info .muted { font-size: 13px; color: var(--muted); }
+
+/* Evita che il footer salti giù quando l'app disegna la pagina (CLS) */
+#app { min-height: 100vh; min-height: 100svh; }
