@@ -77,9 +77,7 @@ window.BOLLITI = {
   {
    "id": "luchi",
    "nickname": "Luchi",
-   "number": 18,
-   "out": true,
-   "role": "aiuto"
+   "number": 18
   },
   {
    "id": "betti",
@@ -95,8 +93,7 @@ window.BOLLITI = {
    "id": "cape",
    "nickname": "Cape",
    "number": 22,
-   "role": "vice",
-   "out": true
+   "role": "vice"
   },
   {
    "id": "galbio",
@@ -116,8 +113,7 @@ window.BOLLITI = {
   {
    "id": "mazzo",
    "nickname": "Mazzo",
-   "number": 28,
-   "out": true
+   "number": 28
   },
   {
    "id": "giannino",
@@ -1709,6 +1705,13 @@ window.BOLLITI = {
    "instagram": "https://www.instagram.com/lafioreria.alme/",
    "logo": "/img/foto/sponsor-la-fioreria.jpg",
    "logo_bg": "#2eab35"
+  },
+  {
+   "id": "edil-damano",
+   "name": "Edil Damano srl",
+   "link": "https://edildamano.it/",
+   "logo": "/img/foto/sponsor-edil-damano.jpg",
+   "logo_bg": "#ffffff"
   }
  ],
  "_photos": [
@@ -1726,6 +1729,7 @@ window.BOLLITI = {
   "partita-3",
   "partita-4",
   "partita-5",
+  "sponsor-edil-damano",
   "sponsor-la-fioreria"
  ]
 };
