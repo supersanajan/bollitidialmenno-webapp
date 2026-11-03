@@ -544,7 +544,7 @@
     h += '<div class="spons">' + L.map(function (sp) {
       var url = sp.link || sp.instagram;
       var handle = sp.instagram ? '@' + sp.instagram.replace(/\/+$/, '').split('/').pop() : '';
-      var inner = (sp.logo ? '<span class="sp-logo"><img src="' + esc(sp.logo) + '" alt="Logo ' + esc(sp.name) + '" loading="lazy"></span>' : '<span class="sp-logo txt"><span class="d">' + esc(sp.name.toUpperCase()) + '</span></span>') +
+      var inner = (sp.logo ? '<span class="sp-logo"' + (sp.logo_bg ? ' style="background:' + esc(sp.logo_bg) + '"' : '') + '><img src="' + esc(sp.logo) + '" alt="Logo ' + esc(sp.name) + '" loading="lazy"></span>' : '<span class="sp-logo txt"><span class="d">' + esc(sp.name.toUpperCase()) + '</span></span>') +
         '<span class="sp-body"><span class="name">' + esc(sp.name) + '</span>' + (sp.note ? '<span class="small">' + esc(sp.note) + '</span>' : '') + (handle ? '<span class="small gold">' + esc(handle) + '</span>' : '') + '</span>';
       return url ? '<a class="card sp" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="card sp">' + inner + '</div>';
     }).join('') + '</div>';

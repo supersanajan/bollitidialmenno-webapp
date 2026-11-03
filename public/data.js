@@ -1706,7 +1706,9 @@ window.BOLLITI = {
   {
    "id": "la-fioreria",
    "name": "La Fioreria",
-   "instagram": "https://www.instagram.com/lafioreria.alme/"
+   "instagram": "https://www.instagram.com/lafioreria.alme/",
+   "logo": "/img/foto/sponsor-la-fioreria.jpg",
+   "logo_bg": "#2eab35"
   }
  ],
  "_photos": [
@@ -1723,6 +1725,7 @@ window.BOLLITI = {
   "partita-2",
   "partita-3",
   "partita-4",
-  "partita-5"
+  "partita-5",
+  "sponsor-la-fioreria"
  ]
 };
