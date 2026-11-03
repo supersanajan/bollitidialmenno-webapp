@@ -41,7 +41,7 @@
   var S = (function () {
     var G = DB.games.slice().sort(function (a, b) { return a.round - b.round; });
     var ps = {};
-    DB.players.forEach(function (p) { ps[p.id] = { id: p.id, gp: 0, pts: 0, p2: 0, p3: 0, ft: 0, pf: 0, best: 0, log: [] }; });
+    DB.players.forEach(function (p) { ps[p.id] = { id: p.id, gp: 0, pts: 0, p2: 0, p3: 0, ft: 0, pf: 0, best: 0, log: [], ftA: 0, fta: 0 }; });
     G.forEach(function (g) {
       g.stats.forEach(function (s) {
         var r = ps[s.p];
@@ -49,8 +49,11 @@
         r.gp++; r.pts += s.pts; r.p2 += s.p2; r.p3 += s.p3; r.ft += s.ft; r.pf += s.pf;
         r.best = Math.max(r.best, s.pts);
         r.log.push({ g: g, s: s });
+        var a = g.app && g.app.players ? g.app.players.filter(function (x) { return x.p === s.p; })[0] : null;
+        if (a && typeof a.fta === 'number') { r.ftA += s.ft; r.fta += a.fta; }
       });
     });
+    var appN = G.filter(function (g) { return g.app && g.app.players && g.app.players.length; }).length;
     Object.keys(ps).forEach(function (k) { ps[k].ppg = ps[k].gp ? ps[k].pts / ps[k].gp : 0; });
     var n = G.length, W = G.filter(function (g) { return g.result === 'W'; }).length;
     var q = [0, 1, 2, 3].map(function (i) {
@@ -79,7 +82,7 @@
     }
     var topTeam = G.reduce(function (m, g) { return !m || g.score.bolliti > m.score.bolliti ? g : m; }, null);
     var ot = G.filter(function (g) { return g.quarters.bolliti.length > 4; });
-    return {
+    return { appN: appN,
       G: G, ps: ps, n: n, W: W, L: n - W,
       pf: sum(G.map(function (g) { return g.score.bolliti; })), pa: sum(G.map(function (g) { return g.score.opponent; })),
       q: q, ot: ot, home: side(true), away: side(false),
@@ -377,7 +380,7 @@
     var cats = {
       punti: { label: 'PUNTI', key: 'ppg', fmt: f1, note: function (r) { return r.pts + ' punti in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
       triple: { label: 'TRIPLE', key: 'p3', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Triple segnate in totale. Il referto registra solo quelle a segno.' },
-      liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Tiri liberi segnati. Le percentuali arrivano solo dalle partite con i dati dell’app.' }
+      liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return r.fta ? r.ftA + '/' + r.fta + ' (' + Math.round(100 * r.ftA / r.fta) + '%) con l’app' : 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite'); }, cap: 'Liberi segnati in stagione. Segnati su tentati e percentuale solo nelle partite con i dati dell’app: per ora ' + S.appN + ' su ' + S.n + '.' }
     };
     var c = cats[cat], rows = ranked(c.key).slice(0, 8), max = rows.length ? rows[0][c.key] : 1;
     var h = '<header class="pagehead"><span class="lbl">Dopo ' + S.n + ' giornate su ' + DB.schedule.length + '</span><h1>STATISTICHE</h1></header>';
