@@ -352,7 +352,7 @@
       var r = S.ps[p.id], off = !!p.out;
       return '<a class="pcard' + (off ? ' off' : '') + '" href="#giocatore-' + p.id + '"><span class="top-band ' + (off ? 'rombi-grey' : 'rombi') + '"><span class="d">' + p.number + '</span></span>' +
         '<span class="info"><span class="pname"><span class="d">' + esc(p.nickname.toUpperCase()) + '</span>' +
-        (p.role === 'capitano' ? '<span class="pill gold rbadge" title="Capitano">CAPITANO</span>' : p.role === 'vice' ? '<span class="pill gold rbadge" title="Vicecapitano">VICE</span>' : '') + '</span>' +
+        (p.role === 'capitano' ? '<span class="pill gold rbadge" title="Capitano">CAPITANO</span>' : p.role === 'vice' ? '<span class="pill gold rbadge" title="Vicecapitano">VICECAP</span>' : '') + '</span>' +
         (off ? '<span class="pout">Non disponibile</span>' : '') +
         (r.gp ? '<span class="stat"><span class="statlbl">Media punti</span><span class="stat-row"><span class="d">' + f1(r.ppg) + '</span><span>in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + '</span></span></span>'
               : (role_or_out(p) ? '' : '<span class="pnone">Nessuna partita giocata</span>')) +
