@@ -41,7 +41,7 @@
   var S = (function () {
     var G = DB.games.slice().sort(function (a, b) { return a.round - b.round; });
     var ps = {};
-    DB.players.forEach(function (p) { ps[p.id] = { id: p.id, gp: 0, pts: 0, p2: 0, p3: 0, ft: 0, pf: 0, best: 0, log: [], ftA: 0, fta: 0 }; });
+    DB.players.forEach(function (p) { ps[p.id] = { id: p.id, gp: 0, pts: 0, p2: 0, p3: 0, ft: 0, pf: 0, best: 0, log: [], ftA: 0, fta: 0, ftG: [] }; });
     G.forEach(function (g) {
       g.stats.forEach(function (s) {
         var r = ps[s.p];
@@ -50,7 +50,7 @@
         r.best = Math.max(r.best, s.pts);
         r.log.push({ g: g, s: s });
         var a = g.app && g.app.players ? g.app.players.filter(function (x) { return x.p === s.p; })[0] : null;
-        if (a && typeof a.fta === 'number') { r.ftA += s.ft; r.fta += a.fta; }
+        if (a && typeof a.fta === 'number') { r.ftA += s.ft; r.fta += a.fta; r.ftG.push(g); }
       });
     });
     var appN = G.filter(function (g) { return g.app && g.app.players && g.app.players.length; }).length;
@@ -369,6 +369,7 @@
     if (!r.gp) return h + '<section class="card"><p class="muted">Nessuna partita giocata in questa stagione.</p></section>';
     h += '<div class="grid3"><div class="tile"><span class="d gold">' + f1(r.ppg) + '</span><span>media punti a partita</span></div><div class="tile"><span class="d">' + r.pts + '</span><span>punti totali</span></div><div class="tile"><span class="d">' + r.best + '</span><span>record personale</span></div>' +
       '<div class="tile"><span class="d">' + r.p3 + '</span><span>triple</span></div><div class="tile"><span class="d">' + r.ft + '</span><span>liberi segnati</span></div><div class="tile"><span class="d">' + r.gp + '</span><span>partite giocate</span></div></div>';
+    if (r.fta) h += '<section class="card"><span class="lbl">Ai liberi</span><p class="d" style="font-size:30px;font-weight:800;line-height:1.1">' + r.ftA + ' su ' + r.fta + ' · ' + Math.round(100 * r.ftA / r.fta) + '%</p><span class="small">Contati solo nelle partite con i dati dell’app (' + r.ftG.map(function (g) { return esc(short(g.opponent)); }).join(', ') + '). Il referto registra solo i liberi segnati.</span></section>';
     h += '<section class="card"><span class="lbl">Partita per partita</span><div class="list">' + r.log.slice().reverse().map(function (x) {
       return '<a class="li" href="#partita-' + x.g.round + '">' + resChip(x.g) + '<span class="grow"><span class="name">' + esc(short(x.g.opponent)) + '</span><span class="small" style="font-size:12px">' + x.g.round + 'ª · ' + dShort(x.g.date) + ' · ' + x.s.p3 + ' triple' + (x.s.s ? ' · quintetto' : '') + '</span></span><span class="val">' + x.s.pts + '</span></a>';
     }).join('') + '</div></section>';
@@ -380,7 +381,7 @@
     var cats = {
       punti: { label: 'PUNTI', key: 'ppg', fmt: f1, note: function (r) { return r.pts + ' punti in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
       triple: { label: 'TRIPLE', key: 'p3', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
-      liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return r.fta ? r.ftA + '/' + r.fta + ' (' + Math.round(100 * r.ftA / r.fta) + '%) con l’app' : 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite'); }, cap: 'Liberi segnati in stagione. Segnati su tentati e percentuale solo nelle partite con i dati dell’app: per ora ' + S.appN + ' su ' + S.n + '.' }
+      liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite'); }, cap: '' }
     };
     var c = cats[cat], rows = ranked(c.key).slice(0, 8), max = rows.length ? rows[0][c.key] : 1;
     var h = '<header class="pagehead"><span class="lbl">Dopo ' + S.n + ' giornate su ' + DB.schedule.length + '</span><h1>STATISTICHE</h1></header>';
