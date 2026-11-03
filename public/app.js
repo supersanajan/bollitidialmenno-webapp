@@ -518,6 +518,20 @@
     if (zoomFrom && zoomFrom.focus) zoomFrom.focus();
   }
 
+
+  function info() {
+    var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
+    function block(t, body) { return '<section class="card info"><span class="lbl">' + t + '</span>' + body + '</section>'; }
+    var h = '<header class="pagehead"><span class="lbl">Le cose serie, in breve</span><h1>INFO</h1></header>';
+    h += block('Cos’è questo sito', '<p>Il sito dei Bolliti Almenno, squadra di Divisione Regionale 3, girone C. L’ha fatto un giocatore per la squadra e per chi ci segue: è <strong>amatoriale e non ufficiale</strong>, non è un sito della FIP.</p>');
+    h += block('Da dove arrivano i numeri', '<ul><li><strong>Partite:</strong> punti, canestri, liberi e falli vengono dai referti ufficiali, rielaborati qui. I referti non vengono pubblicati.</li><li><strong>Classifica:</strong> dal sito della FIP, aggiornata dopo ogni giornata.</li><li><strong>Resoconti e banchetti:</strong> dai post di <a href="' + esc(IG) + '" target="_blank" rel="noopener">@bollitidialmenno</a> su Instagram.</li></ul><p class="muted">Aggiornato a mano dopo ogni partita: se un numero non torna, diccelo e lo sistemiamo. Ultimo aggiornamento: ' + (DB.meta.updated ? esc(dLong(DB.meta.updated)) : '–') + '.</p>');
+    h += block('Privacy', '<ul><li>I giocatori compaiono solo con il <strong>soprannome</strong>, mai con nome e cognome.</li><li>Degli avversari c’è solo il nome della squadra. Niente nomi di arbitri o ufficiali.</li><li>Chi è fermo risulta solo “non disponibile”, senza motivi né date.</li><li>Le foto sono quelle già pubblicate sull’Instagram della squadra, o con il consenso di chi compare.</li></ul>');
+    h += block('Vuoi togliere qualcosa?', '<p>Una foto, un soprannome, un dato che ti riguarda: scrivi in privato a <a href="' + esc(IG) + '" target="_blank" rel="noopener">@bollitidialmenno</a> o a Giannino e lo togliamo, senza domande.</p>');
+    h += block('Cookie e statistiche', '<p>Il sito non usa cookie e non chiede niente a chi lo visita. Anche i font sono caricati dal sito stesso, senza servizi esterni. Al massimo contiamo le visite in forma anonima e aggregata, senza cookie.</p>');
+    h += block('Chi l’ha fatto', '<p>Progettato e curato da <a href="https://www.linkedin.com/in/jan-sana" target="_blank" rel="noopener">Giannino</a>, #33, che aggiorna i dati dopo ogni partita.</p>');
+    return h;
+  }
+
   /* ---------- router ---------- */
   function section(h) {
     if (!h) return 'home';
@@ -537,6 +551,7 @@
     else if (h.indexOf('giocatore-') === 0) html = giocatore(h.slice(10));
     else if (h === 'statistiche' || h === 'stagione') html = stagione();
     else if (h === 'banchetti') html = banchetti();
+    else if (h === 'info') html = info();
     else html = home();
     app.innerHTML = html;
     var page = !h ? 'home' : h.indexOf('partita-') === 0 ? 'partita' : h.indexOf('giocatore-') === 0 ? 'giocatore' : (h === 'bolliti' ? 'roster' : h === 'stagione' ? 'statistiche' : h);
@@ -545,7 +560,7 @@
     Array.prototype.forEach.call(document.querySelectorAll('.tab'), function (t) {
       if (t.getAttribute('data-tab') === sec) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
     });
-    var titles = { home: 'Bolliti Almenno', partite: 'Partite · Bolliti', roster: 'Roster · Bolliti', statistiche: 'Statistiche · Bolliti', banchetti: 'Banchetti · Bolliti' };
+    var titles = { home: 'Bolliti Almenno', partite: 'Partite · Bolliti', roster: 'Roster · Bolliti', statistiche: 'Statistiche · Bolliti', banchetti: 'Banchetti · Bolliti', info: 'Info · Bolliti' };
     document.title = titles[sec] || 'Bolliti Almenno';
     if (!keepScroll) window.scrollTo(0, 0);
   }

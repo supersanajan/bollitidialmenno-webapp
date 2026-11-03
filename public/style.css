@@ -384,3 +384,11 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 /* Titolo del giudice per lo chef (MOSTRO, ALTO...) */
 .chef-line { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
 .pill.badge { background: #F07A1A; color: var(--ink); font-size: 14px; padding: 3px 10px; transform: rotate(-3deg); }
+
+/* Pagina Info */
+.card.info p, .card.info li { font-size: 15px; line-height: 1.55; color: var(--fg-2); }
+.card.info p { margin: 0; }
+.card.info ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+.card.info strong { color: var(--fg); font-weight: 600; }
+.card.info a { color: var(--gold); font-weight: 600; }
+.card.info .muted { font-size: 13px; color: var(--muted); }
