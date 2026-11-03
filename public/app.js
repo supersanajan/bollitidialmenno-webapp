@@ -248,7 +248,7 @@
     var nextUp = above.length ? Math.min.apply(null, above) : null;
     var atk = ST.rows.slice().sort(function (a, b) { return b.pf - a.pf; }).indexOf(ME) + 1;
     var def = ST.rows.slice().sort(function (a, b) { return a.pa - b.pa; }).indexOf(ME) + 1;
-    h += '<section class="card"><div style="display:flex;align-items:flex-end;gap:14px"><span class="d gold" style="font-size:80px;line-height:.85">' + ord(ME.pos) + '</span><div style="display:flex;flex-direction:column;gap:2px;padding-bottom:4px"><span class="d" style="font-size:26px">' + ME.pts + ' PUNTI</span></div></div>' +
+    h += '<section class="card"><div style="display:flex;align-items:flex-end;gap:14px"><span class="d gold" style="font-size:80px;line-height:.85">' + ord(ME.pos) + '</span><div style="display:flex;flex-direction:column;gap:2px;padding-bottom:4px"><span class="d" style="font-size:26px">POSIZIONE</span><span class="small" style="color:var(--muted)">dopo la ' + ST.after_round + 'ª giornata</span></div></div>' +
       '<div class="grid3"><div class="tile"><span class="d">' + ord(atk) + '</span><span>attacco del girone</span></div><div class="tile"><span class="d">' + ord(def) + '</span><span>difesa del girone</span></div><div class="tile"><span class="d" style="font-size:26px;white-space:nowrap">' + ME.pf + '–' + ME.pa + '</span><span>punti fatti e subiti</span></div></div></section>';
     h += '<section class="card" style="padding:14px 10px;gap:0"><div class="box-wrap"><div class="st head"><span>#</span><span>Squadra</span><span>PT</span><span>V–P</span><span>+/−</span></div>' +
       ST.rows.map(function (r) {
