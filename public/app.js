@@ -522,7 +522,7 @@
   function info() {
     var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
     function block(t, body) { return '<section class="card info"><span class="lbl">' + t + '</span>' + body + '</section>'; }
-    var h = '<header class="pagehead"><span class="lbl">Le cose serie, in breve</span><h1>INFO</h1></header>';
+    var h = '<header class="pagehead"><h1>INFO</h1></header>';
     h += block('Cos’è questo sito', '<p>Il sito dei Bolliti Almenno, squadra di Divisione Regionale 3, girone C. L’ha fatto un giocatore per la squadra e per chi ci segue: è <strong>amatoriale e non ufficiale</strong>, non è un sito della FIP.</p>');
     h += block('Da dove arrivano i numeri', '<ul><li><strong>Partite:</strong> punti, canestri, liberi e falli vengono dai referti ufficiali, rielaborati qui. I referti non vengono pubblicati.</li><li><strong>Classifica:</strong> dal sito della FIP, aggiornata dopo ogni giornata.</li><li><strong>Resoconti e banchetti:</strong> dai post di <a href="' + esc(IG) + '" target="_blank" rel="noopener">@bollitidialmenno</a> su Instagram.</li></ul><p class="muted">Aggiornato a mano dopo ogni partita: se un numero non torna, diccelo e lo sistemiamo. Ultimo aggiornamento: ' + (DB.meta.updated ? esc(dLong(DB.meta.updated)) : '–') + '.</p>');
     h += block('Privacy', '<ul><li>I giocatori compaiono solo con il <strong>soprannome</strong>, mai con nome e cognome.</li><li>Degli avversari c’è solo il nome della squadra. Niente nomi di arbitri o ufficiali.</li><li>Chi è fermo risulta solo “non disponibile”, senza motivi né date.</li><li>Le foto sono quelle già pubblicate sull’Instagram della squadra, o con il consenso di chi compare.</li></ul>');
