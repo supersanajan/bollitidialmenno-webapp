@@ -346,7 +346,7 @@
 
   function bolliti() {
     var coach = (DB.staff || []).filter(function (s) { return s.role === 'allenatore'; })[0];
-    var h = '<header class="pagehead"><span class="lbl">Rosa ' + esc(DB.meta.season) + ' · ' + esc(DB.meta.hashtag) + '</span><h1>ROSTER</h1><span class="muted" style="font-size:14px">' + DB.players.length + ' maglie, un soprannome a testa. Media punti per partita giocata.</span></header>';
+    var h = '<header class="pagehead"><span class="lbl">Rosa ' + esc(DB.meta.season) + ' · ' + esc(DB.meta.hashtag) + '</span><h1>ROSTER</h1></header>';
     if (coach) h += '<section class="card" style="flex-direction:row;align-items:center;padding:14px 16px"><span class="iconbtn" style="background:var(--surface-2);border-radius:50%;width:52px;height:52px;color:var(--gold)">' + ICON.clip + '</span><div style="flex:1"><div class="d" style="font-size:26px">' + esc(coach.nickname.toUpperCase()) + '</div><div class="small">Allenatore · gli “Aiolfi’s Boys”</div></div></section>';
     h += '<div class="roster">' + DB.players.slice().sort(function (a, b) { return a.number - b.number; }).map(function (p) {
       var r = S.ps[p.id], off = !!p.out;
