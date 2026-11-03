@@ -528,7 +528,7 @@
     h += block('Privacy', '<ul><li>I giocatori compaiono solo con il <strong>soprannome</strong>, mai con nome e cognome.</li><li>Degli avversari c’è solo il nome della squadra. Niente nomi di arbitri o ufficiali.</li><li>Chi è fermo risulta solo “non disponibile”, senza motivi né date.</li><li>Le foto sono quelle già pubblicate sull’Instagram della squadra, o con il consenso di chi compare.</li></ul>');
     h += block('Vuoi togliere qualcosa?', '<p>Una foto, un soprannome, un dato che ti riguarda: scrivi a Giannino a <a href="mailto:jan.sana.1996@gmail.com">jan.sana.1996@gmail.com</a> e lo togliamo.</p>');
     h += block('Cookie e statistiche', '<p>Il sito non usa cookie e non chiede niente a chi lo visita. Anche i font sono caricati dal sito stesso, senza servizi esterni. Al massimo contiamo le visite in forma anonima e aggregata, senza cookie.</p>');
-    h += block('Chi l’ha fatto', '<p>Progettato e curato da <a href="https://www.linkedin.com/in/jan-sana" target="_blank" rel="noopener">Giannino</a>, #33 e product designer della squadra. Sì, ne abbiamo uno.</p>');
+    h += block('Chi l’ha fatto', '<p>Progettato e curato da <a href="https://www.linkedin.com/in/jan-sana" target="_blank" rel="noopener">Giannino</a>, #33 e designer della squadra. Sì, ne abbiamo uno.</p>');
     return h;
   }
 
