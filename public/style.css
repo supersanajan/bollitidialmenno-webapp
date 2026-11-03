@@ -420,3 +420,7 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 
 .sp-mini { width: 72px; height: 72px; border-radius: 14px; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .sp-mini img { width: 100%; height: 100%; object-fit: contain; padding: 6px; box-sizing: border-box; }
+
+/* Badge capitano/vice accanto al nome nel roster */
+.pcard .info .pname { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.pill.rbadge { font-size: 11px; padding: 2px 7px; letter-spacing: 0.06em; flex-shrink: 0; }
