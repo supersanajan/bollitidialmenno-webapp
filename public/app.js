@@ -391,7 +391,7 @@
     h += '<section class="card" style="padding:16px"><div class="seg on-dark" role="tablist" aria-label="Classifica">' + Object.keys(cats).map(function (k) {
       return '<button role="tab" data-cat="' + k + '" aria-selected="' + (k === cat) + '">' + cats[k].label + '</button>';
     }).join('') + '</div>' + (c.cap ? '<span class="small" style="padding:0 4px">' + c.cap + '</span>' : '') + '<div class="list">' + rows.map(function (r, i) {
-      return '<a class="lb" href="#giocatore-' + r.id + '"><span class="pos">' + (i + 1) + '</span><span class="mid"><span class="row-between"><span style="font-size:15px;font-weight:600">' + esc(nick(r.id)) + ' <span class="small">#' + P[r.id].number + '</span></span><span class="small" style="font-size:12px">' + c.note(r) + '</span></span><span class="track"><span class="fill" style="display:block;width:' + Math.round(r[c.key] / max * 100) + '%"></span></span></span><span class="val">' + c.fmt(r[c.key]) + '</span></a>';
+      return '<a class="lb" href="#giocatore-' + r.id + '"><span class="pos">' + (i + 1) + '</span><span class="mid"><span class="row-between"><span style="font-size:15px;font-weight:600"><span class="nm">' + esc(nick(r.id)) + '</span> <span class="small">#' + P[r.id].number + '</span></span><span class="small" style="font-size:12px">' + c.note(r) + '</span></span><span class="track"><span class="fill" style="display:block;width:' + Math.round(r[c.key] / max * 100) + '%"></span></span></span><span class="val">' + c.fmt(r[c.key]) + '</span></a>';
     }).join('') + '</div></section>';
 
     var diffs = S.q.map(function (x) { return x.f - x.a; });

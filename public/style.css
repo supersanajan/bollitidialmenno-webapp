@@ -192,6 +192,8 @@ a.game:hover { color: var(--fg); background: var(--surface); }
 .tb .who .n { width: 26px; font-family: var(--display); font-weight: 900; font-size: 17px; color: var(--dim); }
 .tb .who .nm { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--fg); text-decoration: underline; text-decoration-color: rgba(245, 165, 36, .55); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
 .tb .who .nm:hover, .tb .who .nm:focus-visible { color: var(--gold); text-decoration-color: var(--gold); }
+.lb .nm { text-decoration: underline; text-decoration-color: rgba(245, 165, 36, .55); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+.lb:hover .nm, .lb:focus-visible .nm { color: var(--gold); text-decoration-color: var(--gold); }
 .tb .pts { font-family: var(--display); font-weight: 900; font-size: 20px; }
 .dot { color: var(--gold); font-size: 10px; }
 .foul-out { color: var(--gold); font-weight: 700; }
