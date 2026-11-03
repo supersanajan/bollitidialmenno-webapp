@@ -37,6 +37,8 @@
     clip: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h5"/></svg>'
   };
 
+  var FOTO_GIOCATORI = false;
+
   /* ---------- statistiche ---------- */
   var S = (function () {
     var G = DB.games.slice().sort(function (a, b) { return a.round - b.round; });
@@ -365,7 +367,8 @@
     var h = head + '<section class="hero-num ' + (p.out ? 'off rombi-grey' : 'rombi') + '"><span class="d n">' + p.number + '</span><div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;min-width:0">' +
       '<span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">' + (ROLE[p.role] ? '<span class="pill dark">' + ROLE[p.role].toUpperCase() + '</span>' : '') + (p.out ? '<span class="pill dark">NON DISPONIBILE</span>' : '') + '</span>' +
       '<span class="d nm">' + esc(p.nickname.toUpperCase()) + '</span></div></section>';
-    h += '<div class="pphoto rombi-dark">' + (p.photo ? '<img src="' + esc(p.photo) + '" alt="Foto di ' + esc(p.nickname) + '">' : (LOGO ? '<img class="ph" src="' + LOGO + '" alt="">' : '') + '<span>Foto in arrivo</span>') + '</div>';
+    // Foto giocatori disattivate per ora (FOTO_GIOCATORI = true per riattivarle, segnaposto compreso).
+    if (FOTO_GIOCATORI) h += '<div class="pphoto rombi-dark">' + (p.photo ? '<img src="' + esc(p.photo) + '" alt="Foto di ' + esc(p.nickname) + '">' : (LOGO ? '<img class="ph" src="' + LOGO + '" alt="">' : '') + '<span>Foto in arrivo</span>') + '</div>';
     if (!r.gp) return h + '<section class="card"><p class="muted">Nessuna partita giocata in questa stagione.</p></section>';
     h += '<div class="grid3"><div class="tile"><span class="d gold">' + f1(r.ppg) + '</span><span>media punti a partita</span></div><div class="tile"><span class="d">' + r.pts + '</span><span>punti totali</span></div><div class="tile"><span class="d">' + r.best + '</span><span>record personale</span></div>' +
       '<div class="tile"><span class="d">' + r.p3 + '</span><span>triple</span></div><div class="tile"><span class="d">' + r.ft + '</span><span>liberi segnati</span></div><div class="tile"><span class="d">' + r.gp + '</span><span>partite giocate</span></div></div>';
