@@ -331,7 +331,7 @@
 
     if (g.app) {
       var ftm = sum(g.stats.map(function (x) { return x.ft; })), fta = sum(g.app.players.map(function (x) { return x.fta || 0; }));
-      h += '<section class="card"><span class="lbl">Dall’app della partita</span>' +
+      h += '<section class="card"><span class="lbl">Altri numeri della partita</span>' +
         (g.app.flow ? '<div class="grid3"><div class="tile"><span class="d">' + g.app.flow.lead_changes + '</span><span>cambi di vantaggio</span></div><div class="tile"><span class="d">' + g.app.flow.ties + '</span><span>parità</span></div><div class="tile"><span class="d">+' + g.app.flow.largest_lead_bolliti + '</span><span>vantaggio max</span></div></div>'
           : (fta ? '<div class="grid2"><div class="tile"><span class="d">' + ftm + '/' + fta + '</span><span>tiri liberi</span></div><div class="tile"><span class="d">' + Math.round(ftm / fta * 100) + '%</span><span>ai liberi</span></div></div>' : '')) +
         '<div class="list">' + g.app.players.filter(function (x) { return x.min !== '00:00'; }).sort(function (a, b2) { return b2.pm - a.pm; }).slice(0, 3).map(function (x) {
