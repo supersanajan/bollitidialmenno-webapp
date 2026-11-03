@@ -379,7 +379,7 @@
   function stagione() {
     var cats = {
       punti: { label: 'PUNTI', key: 'ppg', fmt: f1, note: function (r) { return r.pts + ' punti in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
-      triple: { label: 'TRIPLE', key: 'p3', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: 'Triple segnate in totale. Il referto registra solo quelle a segno.' },
+      triple: { label: 'TRIPLE', key: 'p3', fmt: String, note: function (r) { return 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite') + ''; }, cap: '' },
       liberi: { label: 'LIBERI', key: 'ft', fmt: String, note: function (r) { return r.fta ? r.ftA + '/' + r.fta + ' (' + Math.round(100 * r.ftA / r.fta) + '%) con l’app' : 'in ' + r.gp + (r.gp === 1 ? ' partita' : ' partite'); }, cap: 'Liberi segnati in stagione. Segnati su tentati e percentuale solo nelle partite con i dati dell’app: per ora ' + S.appN + ' su ' + S.n + '.' }
     };
     var c = cats[cat], rows = ranked(c.key).slice(0, 8), max = rows.length ? rows[0][c.key] : 1;
