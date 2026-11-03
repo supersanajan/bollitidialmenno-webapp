@@ -228,8 +228,8 @@
     var vb = voted(), lb = vb[vb.length - 1], pend = pending();
     if (lb) {
       h += '<section class="card rombi-dark"><div class="row-between"><span class="lbl">Ultimo banchetto</span><a class="link" href="#banchetti">Classifica</a></div>' +
-        '<div style="display:flex;align-items:center;gap:14px"><div style="flex:1;min-width:0"><div class="small" style="color:var(--muted)">Chef estratto dallo sceriffo</div><div class="d" style="font-size:44px">' + esc(nick(lb.chef).toUpperCase()) + '</div><div class="small" style="margin-top:4px">Giudice: ' + esc(nick(lb.judge)) + '</div></div>' +
-        '<div class="vote sm"><span class="d">' + f1(lb.vote) + '</span><span class="d">' + esc(lb.vote_label || 'VOTO') + '</span></div></div>' +
+        '<div style="display:flex;align-items:center;gap:14px"><div style="flex:1;min-width:0"><div class="small" style="color:var(--muted)">Chef estratto dallo sceriffo</div><div class="chef-line"><span class="d" style="font-size:44px">' + esc(nick(lb.chef).toUpperCase()) + '</span>' + badge(lb) + '</div><div class="small" style="margin-top:4px">Giudice: ' + esc(nick(lb.judge)) + '</div></div>' +
+        '<div class="vote sm"><span class="d">' + f1(lb.vote) + '</span><span class="d">VOTO</span></div></div>' +
         '<div class="chips">' + menuItems(lb).slice(0, 4).map(function (m) { return '<span class="chip">' + esc(m[1]) + '</span>'; }).join('') + '</div>' +
         (pend.length ? '<div class="small">In attesa del giudizio: ' + pend.map(function (b) { return esc(nick(b.chef)); }).join(', ') + '</div>' : '') +
         (function () { var c = debtCount(); return '<a class="li" href="#banchetti" style="border-top:1px solid var(--line);border-bottom:0;padding-top:14px"><span class="gold">' + ICON.beer + '</span><span class="grow"><span class="name">Debiti in sospeso</span><span class="small" style="font-size:12px">' + c.banchetto + (c.banchetto === 1 ? ' banchetto' : ' banchetti') + ' · ' + c.cassa + (c.cassa === 1 ? ' cassa di birra' : ' casse di birra') + '</span></span><span class="d" style="font-size:32px">' + (c.banchetto + c.cassa) + '</span></a>'; })() + '</section>';
@@ -428,6 +428,7 @@
     return '<div class="stack" style="gap:8px"><span class="lbl">Il banchetto in foto · ' + all.length + '</span><div class="gallery" role="list">' +
       all.map(function (src, i) { return '<button class="gthumb" type="button" role="listitem" data-zoom="' + esc(src) + '" aria-label="Apri la foto ' + (i + 1) + ' di ' + all.length + '"><img src="' + esc(src) + '" alt="" loading="lazy"></button>'; }).join('') + '</div></div>';
   }
+  function badge(b) { return b.vote_label ? '<span class="pill badge" title="Titolo dato dal giudice">' + esc(b.vote_label.toUpperCase()) + '</span>' : ''; }
   function banchetti() {
     var vb = voted(), pend = pending(), rules = DB.meta.banchetti_rules || {};
     var lb = (bsel && vb.filter(function (b) { return b.id === bsel; })[0]) || vb[vb.length - 1];
@@ -435,8 +436,8 @@
     var h = '<header class="pagehead"><h1>BANCHETTI</h1></header>';
     if (lb) {
       h += '<section class="card flush">' + photo(lb.photo, lb.instagram_post, 'Foto del banchetto di ' + nick(lb.chef)) + '<div class="body">' +
-        '<div style="display:flex;align-items:center;gap:14px"><div style="flex:1;min-width:0"><div class="lbl">Ultimo' + (lb.date ? ' · ' + dLong(lb.date) : lb.posted ? ' · ' + dLong(lb.posted) : '') + '</div><div class="d" style="font-size:46px">' + esc(nick(lb.chef).toUpperCase()) + '</div><div class="small" style="margin-top:2px">#' + P[lb.chef].number + ' · giudice ' + esc(nick(lb.judge)) + '</div></div>' +
-        '<div class="vote"><span class="d">' + f1(lb.vote) + '</span><span class="d">' + esc(lb.vote_label || 'VOTO') + '</span></div></div>' +
+        '<div style="display:flex;align-items:center;gap:14px"><div style="flex:1;min-width:0"><div class="lbl">Ultimo' + (lb.date ? ' · ' + dLong(lb.date) : lb.posted ? ' · ' + dLong(lb.posted) : '') + '</div><div class="chef-line"><span class="d" style="font-size:46px">' + esc(nick(lb.chef).toUpperCase()) + '</span>' + badge(lb) + '</div><div class="small" style="margin-top:2px">#' + P[lb.chef].number + ' · giudice ' + esc(nick(lb.judge)) + '</div></div>' +
+        '<div class="vote"><span class="d">' + f1(lb.vote) + '</span><span class="d">VOTO</span></div></div>' +
         '<div class="chips">' + (lb.tags || []).map(function (t) { return '<span class="chip line">' + esc(t === 'home made' ? 'Fatto in casa' : t.charAt(0).toUpperCase() + t.slice(1)) + '</span>'; }).join('') + '</div>' +
         '<div class="list">' + menuItems(lb, true).map(function (m) { return '<div class="menu-row"><span>' + m[0] + '</span><span>' + esc(m[1]) + '</span></div>'; }).join('') + '</div>' +
         (lb.judge_highlight ? '<div class="note">' + ICON.star + '<span>Il meglio per il giudice: ' + esc(lb.judge_highlight) + '.' + (lb.judge_minus ? ' Malus: ' + esc(lb.judge_minus) + '.' : '') + '</span></div>' : '') +

@@ -379,3 +379,7 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 /* Voto del giudice: numero e giudizio separati, il giudizio in corsivo */
 .vote .d:last-child { font-family: var(--body); font-style: italic; font-weight: 600; font-size: 13px; line-height: 1; letter-spacing: 0.06em; text-transform: uppercase; border-top: 1.5px solid rgba(13,13,12,0.35); padding-top: 6px; margin-top: 7px; }
 .vote .d:first-child { line-height: 0.85; }
+
+/* Titolo del giudice per lo chef (MOSTRO, ALTO...) */
+.chef-line { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-width: 0; }
+.pill.badge { background: #F07A1A; color: var(--ink); font-size: 14px; padding: 3px 10px; transform: rotate(-3deg); }
