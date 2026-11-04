@@ -1702,7 +1702,7 @@ window.BOLLITI = {
   {
    "id": "felpa",
    "name": "Felpa",
-   "note": "Con cappuccio, fodera con le cosce di pollo e numero sulla manica per i giocatori.",
+   "note": "Con cappuccio e fodera con le cosce di pollo, con possibilità di aggiungere il numero sulla manica.",
    "views": [
     "davanti",
     "dietro"
