@@ -454,5 +454,5 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 .game .who .venue .ico { width: 13px; height: 13px; flex-shrink: 0; }
 .game.is-next .who .venue { color: var(--ink); text-decoration-color: rgba(13,13,12,.5); }
 
-.btn.cal-btn { background: #F07A1A; color: var(--ink); border: 1.5px solid rgba(13,13,12,.55); }
-.btn.cal-btn:hover { background: #F58A30; color: var(--ink); }
+.btn.cal-btn { background: var(--gold); color: var(--ink); border: 1.5px solid var(--ink); }
+.btn.cal-btn:hover { background: #F8B547; color: var(--ink); }
