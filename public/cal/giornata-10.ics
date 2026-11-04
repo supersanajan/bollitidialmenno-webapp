@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g10@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20261204T203000Z
+DTEND:20261204T223000Z
+SUMMARY:Bolliti vs Polisportiva Monticellese (10ª giornata)
+LOCATION:Palestra Comunale\, Monticello Brianza
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palestra%20Comunale%2C%20Monticello%20Brianza · boll
+ itidialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

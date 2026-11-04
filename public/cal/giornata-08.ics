@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g08@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20261120T201500Z
+DTEND:20261120T221500Z
+SUMMARY:Bolliti vs ARS Rovagnate (8ª giornata)
+LOCATION:Palazzetto dello Sport\, La Valletta Brianza
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palazzetto%20dello%20Sport%2C%20La%20Valletta%20Brian
+ za · bollitidialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

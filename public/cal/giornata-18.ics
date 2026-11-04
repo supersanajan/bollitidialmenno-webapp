@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g18@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20270221T170000Z
+DTEND:20270221T190000Z
+SUMMARY:Bolliti vs B3 Basket Mapello (18ª giornata)
+LOCATION:Palazzetto dello Sport\, Mapello
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palazzetto%20dello%20Sport%2C%20Mapello · bollitidia
+ lmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

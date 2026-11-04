@@ -443,3 +443,13 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
   .st > span:nth-child(5) { display: none; }
   .tile .d[style*="font-size:24px"] { font-size: 19px !important; }
 }
+
+/* Prossima partita: Maps e calendario */
+.next-btns { display: grid; grid-template-columns: 1fr; gap: 8px; }
+@media (min-width: 480px) { .next-btns { grid-template-columns: 1fr 1fr; } }
+.next-btns .btn { min-height: 46px; font-size: 14px; padding: 0 10px; text-align: center; line-height: 1.2; }
+/* Calendario: indirizzo con link a Maps */
+.game .who .venue { display: inline-flex; align-items: center; gap: 4px; margin-top: 3px; font-size: 12px; color: var(--gold); text-decoration: underline; text-decoration-color: rgba(245, 165, 36, .5); text-underline-offset: 2px; min-width: 0; }
+.game .who .venue span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.game .who .venue .ico { width: 13px; height: 13px; flex-shrink: 0; }
+.game.is-next .who .venue { color: var(--ink); text-decoration-color: rgba(13,13,12,.5); }

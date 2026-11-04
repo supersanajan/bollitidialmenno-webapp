@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g19@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20270226T203000Z
+DTEND:20270226T223000Z
+SUMMARY:Bolliti vs Basket Biassono (19ª giornata)
+LOCATION:Palestra Polivalente\, Almenno S.S.
+DESCRIPTION:DR3 girone C\, in casa. Mappa: https://www.google.com/maps/sear
+ ch/?api=1&query=Palestra%20Polivalente%2C%20Almenno%20San%20Salvatore · b
+ ollitidialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

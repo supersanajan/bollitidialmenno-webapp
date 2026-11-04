@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g22@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20270319T201500Z
+DTEND:20270319T221500Z
+SUMMARY:Bolliti vs D'Avino Mandello Lario (22ª giornata)
+LOCATION:Palestra Via Pra Magno\, Mandello del Lario
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palestra%20Via%20Pra%20Magno%2C%20Mandello%20del%20La
+ rio · bollitidialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

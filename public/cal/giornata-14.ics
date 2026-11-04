@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g14@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20270121T203000Z
+DTEND:20270121T223000Z
+SUMMARY:Bolliti vs Basket Sovico (14ª giornata)
+LOCATION:Palestra Scuola Media\, Sovico
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palestra%20Scuola%20Media%2C%20Sovico · bollitidialm
+ enno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

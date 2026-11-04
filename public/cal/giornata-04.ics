@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g04@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20261022T193000Z
+DTEND:20261022T213000Z
+SUMMARY:Bolliti vs Lambers Basket Triuggio (4ª giornata)
+LOCATION:Scuole Medie\, Triuggio
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Scuole%20Medie%2C%20Triuggio · bollitidialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

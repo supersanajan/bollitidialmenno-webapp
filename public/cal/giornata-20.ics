@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g20@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20270305T203000Z
+DTEND:20270305T223000Z
+SUMMARY:Bolliti vs Rhinos Robbiate (20ª giornata)
+LOCATION:Palestra Montello\, Merate
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palestra%20Montello%2C%20Merate · bollitidialmenno.c
+ om
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

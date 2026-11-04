@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Bolliti Almenno//bollitidialmenno.com//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bolliti-2026-27-g02@bollitidialmenno.com
+DTSTAMP:20261104T103637Z
+DTSTART:20261011T184500Z
+DTEND:20261011T204500Z
+SUMMARY:Bolliti vs Aurora S. Francesco (2ª giornata)
+LOCATION:Palazzetto Pietro Scola\, Malgrate
+DESCRIPTION:DR3 girone C\, in trasferta. Mappa: https://www.google.com/maps
+ /search/?api=1&query=Palazzetto%20Pietro%20Scola%2C%20Malgrate · bollitid
+ ialmenno.com
+URL:https://bollitidialmenno.com/#partite
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT2H
+DESCRIPTION:Partita dei Bolliti tra 2 ore
+END:VALARM
+END:VEVENT
+END:VCALENDAR

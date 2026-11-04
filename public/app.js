@@ -28,6 +28,8 @@
   var ROLE = { capitano: 'Capitano', vice: 'Vicecapitano', aiuto: 'Aiuto allenatore' };
 
   var ICON = {
+    pin: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+    cal: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>',
     ig: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>',
     back: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>',
     arrow: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" style="width:18px;height:18px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
@@ -184,6 +186,9 @@
   function debtCount() { var c = { banchetto: 0, cassa: 0 }; debts().forEach(function (e) { c[owesLabel(e)]++; }); return c; }
   function debts() { return DB.discipline.events.filter(function (e) { return e.status !== 'saldata'; }); }
 
+  function mapsUrl(venue) { return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(String(venue || '').replace('Almenno S.S.', 'Almenno San Salvatore')); }
+  function icsUrl(round) { return '/cal/giornata-' + (round < 10 ? '0' : '') + round + '.ics'; }
+  function venueLink(s) { return '<a class="venue" href="' + esc(mapsUrl(s.venue)) + '" target="_blank" rel="noopener">' + ICON.pin + '<span>' + esc(s.venue) + '</span></a>'; }
   /* ---------- pagine ---------- */
   function home() {
     var nx = nextGame(), last = S.G[S.G.length - 1];
@@ -194,6 +199,7 @@
         '<div><div class="d" style="font-size:22px;font-weight:800;letter-spacing:.04em">BOLLITI vs</div><h1 class="d opp">' + esc(nx.opponent.toUpperCase()) + '</h1></div>' +
         '<div style="display:flex;gap:8px"><div class="box"><span>Quando</span><span class="d">' + esc(whenLabel(nx)) + '</span></div><div class="box"><span>Dove</span><span class="d">' + (nx.home ? 'IN CASA' : 'TRASFERTA') + '</span></div></div>' +
         '<span style="font-size:14px;font-weight:500">' + esc(nx.venue) + '</span>' +
+        '<div class="next-btns"><a class="btn dark" href="' + esc(mapsUrl(nx.venue)) + '" target="_blank" rel="noopener">' + ICON.pin + 'Portami alla palestra</a><a class="btn ghost-dark" href="' + icsUrl(nx.round) + '">' + ICON.cal + 'Aggiungi al calendario</a></div>' +
         (stRow(nx.opponent) ? '<span style="font-size:14px;font-weight:600">' + esc(short(nx.opponent)) + ': ' + ord(stRow(nx.opponent).pos) + ' in classifica, ' + stRow(nx.opponent).w + ' vinte e ' + stRow(nx.opponent).l + (stRow(nx.opponent).l === 1 ? ' persa' : ' perse') + '</span>' : '') + '</section>';
     }
 
@@ -280,9 +286,9 @@
       if (g) {
         h += '<a class="game" href="#partita-' + s.round + '">' + when + who + '<span class="right"><span class="d">' + g.score.bolliti + '–' + g.score.opponent + (g.overtime ? '<small style="font-size:13px"> dts</small>' : '') + '</span>' + resChip(g) + '</span></a>';
       } else if (nx && nx.round === s.round) {
-        h += '<a class="game is-next" href="#">' + when + '<span class="who"><span class="d">' + esc(s.opponent.toUpperCase()) + '</span><span>' + where + ' · prossima</span></span><span class="right"><span class="d">' + esc(s.time) + '</span></span></a>';
+        h += '<div class="game is-next">' + when + '<span class="who"><span class="d">' + esc(s.opponent.toUpperCase()) + '</span><span>' + (s.home ? 'Casa' : 'Trasferta') + ' · prossima</span>' + venueLink(s) + '</span><span class="right"><span class="d">' + esc(s.time) + '</span></span></div>';
       } else {
-        h += '<div class="game future">' + when + who + '<span class="right"><span class="d">' + esc(s.time) + '</span></span></div>';
+        h += '<div class="game future">' + when + '<span class="who"><span class="d">' + esc(s.opponent.toUpperCase()) + '</span><span>' + (s.home ? 'Casa' : 'Trasferta') + (s.derby ? ' · derby' : '') + '</span>' + venueLink(s) + '</span><span class="right"><span class="d">' + esc(s.time) + '</span></span></div>';
       }
     });
     return h + '</div>';
