@@ -492,7 +492,7 @@
       zoomEl.className = 'zoom';
       zoomEl.setAttribute('role', 'dialog');
       zoomEl.setAttribute('aria-modal', 'true');
-      zoomEl.setAttribute('aria-label', 'Foto del banchetto');
+      zoomEl.setAttribute('aria-label', 'Foto ingrandita');
       document.body.appendChild(zoomEl);
       zoomEl.addEventListener('click', function (e) {
         var a = e.target.closest('[data-zstep]');
@@ -558,17 +558,22 @@
     return h + sponsorCta();
   }
   function merchCard() {
-    var L = DB.merch || [];
+    var L = (DB.merch || []).filter(function (m) { return m.photos && m.photos.length; });
     if (!L.length) return '';
     var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
     var DM = 'https://ig.me/m/' + IG.replace(/\/+$/, '').split('/').pop();
-    return L.map(function (m) {
-      var ph = m.photos && m.photos.length ? '<div class="merch-ph"><img src="' + esc(m.photos[0]) + '" alt="' + esc(m.name) + '" loading="lazy"></div>' :
-        '<div class="merch-ph rombi">' + (LOGO ? '<img class="ph" src="' + LOGO + '" alt="">' : '') + '<span>Foto in arrivo</span></div>';
-      return '<section class="card flush merch">' + ph + '<div class="body"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">' + esc(m.name.toUpperCase()) + '</span>' +
-        (m.note ? '<p>' + esc(m.note) + '</p>' : '') + '<p>Vuoi la tua? Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
-        '<a class="btn" href="' + esc(DM) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici in DM</a></div></section>';
-    }).join('');
+    var tiles = [];
+    L.forEach(function (m) {
+      m.photos.forEach(function (src, i) {
+        var cap = m.name + (m.views && m.views[i] ? ' · ' + m.views[i] : '');
+        tiles.push('<button class="mtile" type="button" data-zoom="' + esc(src) + '" aria-label="Apri la foto: ' + esc(cap) + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '" loading="lazy"><span>' + esc(cap) + '</span></button>');
+      });
+    });
+    return '<section class="card merch"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">IL KIT DEI BOLLITI</span>' +
+      '<div class="mgrid">' + tiles.join('') + '</div>' +
+      '<ul class="mlist">' + L.map(function (m) { return '<li><strong>' + esc(m.name) + '</strong>' + (m.note ? ' · ' + esc(m.note) : '') + '</li>'; }).join('') + '</ul>' +
+      '<p>Vuoi il tuo? Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
+      '<a class="btn" href="' + esc(DM) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici in DM</a></section>';
   }
   function sponsorStrip() {
     var L = DB.sponsors || [];

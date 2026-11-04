@@ -1698,7 +1698,29 @@ window.BOLLITI = {
    }
   ]
  },
- "merch": [],
+ "merch": [
+  {
+   "id": "felpa",
+   "name": "Felpa",
+   "note": "Con cappuccio, fodera con le cosce di pollo e numero sulla manica per i giocatori.",
+   "views": [
+    "davanti",
+    "dietro"
+   ],
+   "photos": [
+    "/img/foto/merch-felpa.jpg",
+    "/img/foto/merch-felpa-2.jpg"
+   ]
+  },
+  {
+   "id": "pantalone",
+   "name": "Pantalone",
+   "note": "Della tuta, con logo e scritta sulla gamba.",
+   "photos": [
+    "/img/foto/merch-pantalone.jpg"
+   ]
+  }
+ ],
  "sponsors": [
   {
    "id": "la-fioreria",
@@ -1725,6 +1747,9 @@ window.BOLLITI = {
   "banchetto-2-3",
   "banchetto-2-4",
   "banchetto-3",
+  "merch-felpa",
+  "merch-felpa-2",
+  "merch-pantalone",
   "partita-1",
   "partita-2",
   "partita-3",
