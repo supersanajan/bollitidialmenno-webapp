@@ -1706,16 +1706,9 @@ window.BOLLITI = {
    "views": [
     "fronte e retro"
    ],
+   "f": true,
    "photos": [
     "/img/foto/merch-felpa.jpg"
-   ]
-  },
-  {
-   "id": "pantalone",
-   "name": "Pantalone",
-   "note": "Della tuta, con logo e scritta sulla gamba.",
-   "photos": [
-    "/img/foto/merch-pantalone.jpg"
    ]
   }
  ],

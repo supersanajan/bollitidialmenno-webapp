@@ -569,11 +569,11 @@
         tiles.push('<button class="mtile" type="button" data-zoom="' + esc(src) + '" aria-label="Apri la foto: ' + esc(cap) + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '" loading="lazy"><span><b>' + esc(m.name) + '</b>' + (view ? ' <i>(' + esc(view) + ')</i>' : '') + '</span></button>');
       });
     });
-    return '<section class="card merch"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">IL KIT DEI BOLLITI</span>' +
+    return '<section class="card merch"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">' + (L.length > 1 ? 'IL KIT DEI BOLLITI' : (L[0].f ? 'LA ' : 'IL ') + esc(L[0].name.toUpperCase()) + ' DEI BOLLITI') + '</span>' +
       (L.length > 1 ? '<span class="small" style="font-size:14px;margin-top:-4px">Disponibile come kit completo o con acquisto dei singoli capi.</span>' : '') +
       '<div class="mgrid">' + tiles.join('') + '</div>' +
       '<ul class="mlist">' + L.map(function (m) { return '<li><strong>' + esc(m.name) + '</strong>' + (m.note ? ' · ' + esc(m.note) : '') + '</li>'; }).join('') + '</ul>' +
-      '<p>Vuoi il tuo? Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
+      '<p>' + (L.length === 1 && L[0].f ? 'Vuoi la tua?' : 'Vuoi il tuo?') + ' Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
       '<a class="btn" href="' + esc(DM) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici in DM</a></section>';
   }
   function sponsorStrip() {
