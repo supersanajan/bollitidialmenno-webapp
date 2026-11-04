@@ -573,7 +573,7 @@
       (L.length > 1 ? '<span class="small" style="font-size:14px;margin-top:-4px">Disponibile come kit completo o con acquisto dei singoli capi.</span>' : '') +
       '<div class="mgrid">' + tiles.join('') + '</div>' +
       '<ul class="mlist">' + L.map(function (m) { return '<li><strong>' + esc(m.name) + '</strong>' + (m.note ? ' · ' + esc(m.note) : '') + '</li>'; }).join('') + '</ul>' +
-      '<p>' + (L.length === 1 && L[0].f ? 'Vuoi la tua?' : 'Vuoi il tuo?') + ' Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
+      '<p>' + (L.length === 1 && L[0].f ? 'Vuoi la tua?' : 'Vuoi il tuo?') + ' Scrivici per taglie, disponibilità e prezzo.</p>' +
       '<a class="btn" href="' + esc(DM) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici in DM</a></section>';
   }
   function sponsorStrip() {
