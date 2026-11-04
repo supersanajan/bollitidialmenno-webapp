@@ -1698,13 +1698,7 @@ window.BOLLITI = {
    }
   ]
  },
- "merch": [
-  {
-   "id": "felpa",
-   "name": "Felpa Bolliti",
-   "note": "La felpa ufficiale della squadra."
-  }
- ],
+ "merch": [],
  "sponsors": [
   {
    "id": "la-fioreria",
