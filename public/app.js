@@ -240,6 +240,7 @@
         (pend.length ? '<div class="small">In attesa del giudizio: ' + pend.map(function (b) { return esc(nick(b.chef)); }).join(', ') + '</div>' : '') +
         (function () { var c = debtCount(); return '<a class="li" href="#banchetti" style="border-top:1px solid var(--line);border-bottom:0;padding-top:14px"><span class="gold">' + ICON.beer + '</span><span class="grow"><span class="name">Debiti in sospeso</span><span class="small" style="font-size:12px">' + c.banchetto + (c.banchetto === 1 ? ' banchetto' : ' banchetti') + ' · ' + c.cassa + (c.cassa === 1 ? ' cassa di birra' : ' casse di birra') + '</span></span><span class="d" style="font-size:32px">' + (c.banchetto + c.cassa) + '</span></a>'; })() + '</section>';
     }
+    h += merchCard();
     h += sponsorStrip();
     return h;
   }
@@ -555,6 +556,19 @@
       return url ? '<a class="card sp" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + '</a>' : '<div class="card sp">' + inner + '</div>';
     }).join('') + '</div>';
     return h + sponsorCta();
+  }
+  function merchCard() {
+    var L = DB.merch || [];
+    if (!L.length) return '';
+    var IG = DB.meta.instagram || 'https://www.instagram.com/bollitidialmenno/';
+    var DM = 'https://ig.me/m/' + IG.replace(/\/+$/, '').split('/').pop();
+    return L.map(function (m) {
+      var ph = m.photos && m.photos.length ? '<div class="merch-ph"><img src="' + esc(m.photos[0]) + '" alt="' + esc(m.name) + '" loading="lazy"></div>' :
+        '<div class="merch-ph rombi">' + (LOGO ? '<img class="ph" src="' + LOGO + '" alt="">' : '') + '<span>Foto in arrivo</span></div>';
+      return '<section class="card flush merch">' + ph + '<div class="body"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">' + esc(m.name.toUpperCase()) + '</span>' +
+        (m.note ? '<p>' + esc(m.note) + '</p>' : '') + '<p>Vuoi la tua? Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
+        '<a class="btn" href="' + esc(DM) + '" target="_blank" rel="noopener">' + ICON.ig + 'Scrivici in DM</a></div></section>';
+    }).join('');
   }
   function sponsorStrip() {
     var L = DB.sponsors || [];
