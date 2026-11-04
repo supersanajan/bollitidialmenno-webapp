@@ -1704,8 +1704,8 @@ window.BOLLITI = {
    "name": "Felpa",
    "note": "Con cappuccio e fodera con le cosce di pollo, con possibilità di aggiungere il numero sulla manica.",
    "views": [
-    "davanti",
-    "dietro"
+    "fronte",
+    "retro"
    ],
    "photos": [
     "/img/foto/merch-felpa.jpg",

@@ -565,7 +565,7 @@
     var tiles = [];
     L.forEach(function (m) {
       m.photos.forEach(function (src, i) {
-        var cap = m.name + (m.views && m.views[i] ? ' · ' + m.views[i] : '');
+        var cap = m.name + (m.views && m.views[i] ? ' ' + m.views[i] : '');
         tiles.push('<button class="mtile" type="button" data-zoom="' + esc(src) + '" aria-label="Apri la foto: ' + esc(cap) + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '" loading="lazy"><span>' + esc(cap) + '</span></button>');
       });
     });
