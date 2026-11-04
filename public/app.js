@@ -565,8 +565,8 @@
     var tiles = [];
     L.forEach(function (m) {
       m.photos.forEach(function (src, i) {
-        var cap = m.name + (m.views && m.views[i] ? ' ' + m.views[i] : '');
-        tiles.push('<button class="mtile" type="button" data-zoom="' + esc(src) + '" aria-label="Apri la foto: ' + esc(cap) + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '" loading="lazy"><span>' + esc(cap) + '</span></button>');
+        var view = m.views && m.views[i] ? m.views[i] : '', cap = m.name + (view ? ' (' + view + ')' : '');
+        tiles.push('<button class="mtile" type="button" data-zoom="' + esc(src) + '" aria-label="Apri la foto: ' + esc(cap) + '"><img src="' + esc(src) + '" alt="' + esc(cap) + '" loading="lazy"><span><b>' + esc(m.name) + '</b>' + (view ? ' <i>(' + esc(view) + ')</i>' : '') + '</span></button>');
       });
     });
     return '<section class="card merch"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">IL KIT DEI BOLLITI</span>' +
