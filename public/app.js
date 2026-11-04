@@ -570,7 +570,7 @@
       });
     });
     return '<section class="card merch"><span class="lbl">Merch</span><span class="d" style="font-size:40px;line-height:.95">IL KIT DEI BOLLITI</span>' +
-      (L.length > 1 ? '<span class="small" style="font-size:14px;margin-top:-4px">Si possono acquistare insieme o separatamente: ' + L.map(function (m) { return 'solo ' + m.name.toLowerCase(); }).join(' o ') + '.</span>' : '') +
+      (L.length > 1 ? '<span class="small" style="font-size:14px;margin-top:-4px">Disponibile come kit completo o con acquisto dei singoli capi.</span>' : '') +
       '<div class="mgrid">' + tiles.join('') + '</div>' +
       '<ul class="mlist">' + L.map(function (m) { return '<li><strong>' + esc(m.name) + '</strong>' + (m.note ? ' · ' + esc(m.note) : '') + '</li>'; }).join('') + '</ul>' +
       '<p>Vuoi il tuo? Scrivici in DM su Instagram per taglie, disponibilità e prezzo.</p>' +
