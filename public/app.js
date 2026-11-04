@@ -199,7 +199,7 @@
         '<div><div class="d" style="font-size:22px;font-weight:800;letter-spacing:.04em">BOLLITI vs</div><h1 class="d opp">' + esc(nx.opponent.toUpperCase()) + '</h1></div>' +
         '<div style="display:flex;gap:8px"><div class="box"><span>Quando</span><span class="d">' + esc(whenLabel(nx)) + '</span></div><div class="box"><span>Dove</span><span class="d">' + (nx.home ? 'IN CASA' : 'TRASFERTA') + '</span></div></div>' +
         '<span style="font-size:14px;font-weight:500">' + esc(nx.venue) + '</span>' +
-        '<div class="next-btns"><a class="btn dark" href="' + esc(mapsUrl(nx.venue)) + '" target="_blank" rel="noopener">' + ICON.pin + 'Portami alla palestra</a><a class="btn ghost-dark" href="' + icsUrl(nx.round) + '">' + ICON.cal + 'Aggiungi al calendario</a></div>' +
+        '<div class="next-btns"><a class="btn dark" href="' + esc(mapsUrl(nx.venue)) + '" target="_blank" rel="noopener">' + ICON.pin + 'Portami alla palestra</a><a class="btn cal-btn" href="' + icsUrl(nx.round) + '">' + ICON.cal + 'Aggiungi al calendario</a></div>' +
         (stRow(nx.opponent) ? '<span style="font-size:14px;font-weight:600">' + esc(short(nx.opponent)) + ': ' + ord(stRow(nx.opponent).pos) + ' in classifica, ' + stRow(nx.opponent).w + ' vinte e ' + stRow(nx.opponent).l + (stRow(nx.opponent).l === 1 ? ' persa' : ' perse') + '</span>' : '') + '</section>';
     }
 
