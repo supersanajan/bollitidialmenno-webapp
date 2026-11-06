@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-03"
+  "updated": "2026-11-06"
  },
  "players": [
   {
@@ -1370,6 +1370,246 @@ window.BOLLITI = {
     "opponent_3pt_made": null,
     "team_photo": "/img/foto/partita-5.jpg",
     "instagram_post": "https://www.instagram.com/p/DfKRLoyDMaX/"
+   }
+  },
+  {
+   "round": 6,
+   "date": "2026-11-05",
+   "home": false,
+   "opponent": "Basket Biassono",
+   "score": {
+    "bolliti": 58,
+    "opponent": 61
+   },
+   "result": "L",
+   "overtime": false,
+   "quarters": {
+    "bolliti": [
+     19,
+     9,
+     9,
+     21
+    ],
+    "opponent": [
+     15,
+     20,
+     14,
+     12
+    ]
+   },
+   "bench_as_staff": [],
+   "stats": [
+    {
+     "p": "nico",
+     "n": 2,
+     "s": false,
+     "pts": 8,
+     "p2": 2,
+     "p3": 1,
+     "ft": 1,
+     "pf": 2
+    },
+    {
+     "p": "ragno-violino",
+     "n": 7,
+     "s": true,
+     "pts": 9,
+     "p2": 0,
+     "p3": 3,
+     "ft": 0,
+     "pf": 2
+    },
+    {
+     "p": "il-grigio",
+     "n": 9,
+     "s": true,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 2
+    },
+    {
+     "p": "guala",
+     "n": 10,
+     "s": false,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "ft": 0,
+     "pf": 1
+    },
+    {
+     "p": "bobby",
+     "n": 11,
+     "s": false,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "ft": 0,
+     "pf": 1
+    },
+    {
+     "p": "santo",
+     "n": 17,
+     "s": false,
+     "pts": 7,
+     "p2": 1,
+     "p3": 1,
+     "ft": 2,
+     "pf": 4
+    },
+    {
+     "p": "wade",
+     "n": 18,
+     "s": false,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 1
+    },
+    {
+     "p": "betti",
+     "n": 19,
+     "s": true,
+     "pts": 12,
+     "p2": 6,
+     "p3": 0,
+     "ft": 0,
+     "pf": 3
+    },
+    {
+     "p": "enri",
+     "n": 20,
+     "s": true,
+     "pts": 7,
+     "p2": 1,
+     "p3": 1,
+     "ft": 2,
+     "pf": 0
+    },
+    {
+     "p": "galbio",
+     "n": 24,
+     "s": false,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 0
+    },
+    {
+     "p": "tia",
+     "n": 25,
+     "s": true,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "ft": 0,
+     "pf": 3
+    },
+    {
+     "p": "giannino",
+     "n": 33,
+     "s": false,
+     "pts": 7,
+     "p2": 2,
+     "p3": 1,
+     "ft": 0,
+     "pf": 1
+    }
+   ],
+   "app": {
+    "flow": null,
+    "players": [
+     {
+      "p": "nico",
+      "min": "14:45",
+      "fta": 1,
+      "pm": 6
+     },
+     {
+      "p": "ragno-violino",
+      "min": "21:00",
+      "fta": 0,
+      "pm": 1
+     },
+     {
+      "p": "il-grigio",
+      "min": "06:28",
+      "fta": 0,
+      "pm": -8
+     },
+     {
+      "p": "guala",
+      "min": "09:58",
+      "fta": 0,
+      "pm": -4
+     },
+     {
+      "p": "bobby",
+      "min": "13:20",
+      "fta": 0,
+      "pm": 0
+     },
+     {
+      "p": "santo",
+      "min": "30:10",
+      "fta": 2,
+      "pm": 9
+     },
+     {
+      "p": "wade",
+      "min": "06:12",
+      "fta": 0,
+      "pm": -7
+     },
+     {
+      "p": "betti",
+      "min": "25:02",
+      "fta": 0,
+      "pm": 5
+     },
+     {
+      "p": "enri",
+      "min": "25:33",
+      "fta": 2,
+      "pm": -7
+     },
+     {
+      "p": "galbio",
+      "min": "03:05",
+      "fta": 0,
+      "pm": -1
+     },
+     {
+      "p": "tia",
+      "min": "26:39",
+      "fta": 0,
+      "pm": 0
+     },
+     {
+      "p": "giannino",
+      "min": "17:48",
+      "fta": 0,
+      "pm": -9
+     }
+    ]
+   },
+   "recap": {
+    "source": "referto e app",
+    "headline": "Sconfitta di misura a Biassono: rimonta da -12 nell'ultimo quarto, ma non basta",
+    "running_score": [
+     "19-15",
+     "28-35",
+     "37-49",
+     "58-61"
+    ],
+    "moments": [],
+    "opponent_3pt_made": null,
+    "team_photo": null,
+    "instagram_post": null
    }
   }
  ],
