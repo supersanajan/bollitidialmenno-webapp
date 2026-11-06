@@ -1599,7 +1599,7 @@ window.BOLLITI = {
    },
    "recap": {
     "source": "referto e app",
-    "headline": "Sconfitta di misura a Biassono: rimonta da -12 nell'ultimo quarto, ma non basta",
+    "headline": "Il commento della partita sta arrivando su Instagram.",
     "running_score": [
      "19-15",
      "28-35",
@@ -1609,7 +1609,8 @@ window.BOLLITI = {
     "moments": [],
     "opponent_3pt_made": null,
     "team_photo": null,
-    "instagram_post": null
+    "instagram_post": null,
+    "pending": true
    }
   }
  ],
