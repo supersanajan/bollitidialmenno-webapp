@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-06"
+  "updated": "2026-11-08"
  },
  "players": [
   {
@@ -1598,19 +1598,35 @@ window.BOLLITI = {
     ]
    },
    "recap": {
-    "source": "referto e app",
-    "headline": "Il commento della partita sta arrivando su Instagram.",
+    "source": "caption Instagram",
+    "headline": "Rimonta sfiorata a Biassono: dal −12 al −1, poi il ferro dice no",
     "running_score": [
      "19-15",
      "28-35",
      "37-49",
      "58-61"
     ],
-    "moments": [],
+    "moments": [
+     {
+      "q": "Q1",
+      "text": "Partenza in salita, poi la concretezza di Betti e le triple di Ragno Violino, Guala (tornato in campo per l'occasione) e Tia: Bolliti avanti 19-15 dopo dieci minuti."
+     },
+     {
+      "q": "Q2",
+      "text": "Cinque minuti senza segnare e Biassono scappa: 35-28 all'intervallo."
+     },
+     {
+      "q": "Q3",
+      "text": "Il terzo quarto non sblocca i Bolliti: a dieci minuti dalla fine è 49-37 per i padroni di casa."
+     },
+     {
+      "q": "Q4",
+      "text": "La zona 3-2 frena Biassono e quattro triple in pochi minuti valgono il 59-58 a 30 secondi dalla fine. Due liberi di Biassono, l'ultima tripla di Ragno Violino si spegne sul ferro e il tap di Nico esce di pochissimo: finisce 61-58."
+     }
+    ],
     "opponent_3pt_made": null,
-    "team_photo": null,
-    "instagram_post": null,
-    "pending": true
+    "team_photo": "/img/foto/partita-6.jpg",
+    "instagram_post": "https://www.instagram.com/p/DfaOVAXkUmK/"
    }
   }
  ],
@@ -1986,6 +2002,7 @@ window.BOLLITI = {
   "partita-3",
   "partita-4",
   "partita-5",
+  "partita-6",
   "sponsor-edil-damano",
   "sponsor-la-fioreria"
  ]
