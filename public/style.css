@@ -473,3 +473,14 @@ button.li.chefrow.on { background: var(--surface-2); border-radius: 12px; }
 .mlist { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; color: var(--fg-2); }
 .mlist strong { color: var(--fg); font-weight: 600; }
 @media (min-width: 768px) { .mgrid { grid-template-columns: 1fr 1fr; } .mtile:first-child { grid-column: auto; } .mtile:last-child:nth-child(2) { grid-column: auto; } }
+
+/* Partita: racconto quarto per quarto */
+.qstep { display: flex; gap: 14px; }
+.qstep .mk { display: flex; flex-direction: column; align-items: center; width: 40px; flex-shrink: 0; }
+.qstep .mk .d { font-size: 16px; color: var(--ink); background: var(--gold); border-radius: 8px; padding: 3px 6px; }
+.qstep .mk i { width: 2px; flex: 1; background: var(--line); margin: 4px 0; }
+.qstep:last-of-type .mk i { visibility: hidden; }
+.qbody { flex: 1; min-width: 0; padding-bottom: 18px; display: flex; flex-direction: column; gap: 8px; }
+.qpart { display: flex; align-items: baseline; gap: 8px; }
+.qpart .d { font-size: 30px; line-height: 1; }
+.qbody p { margin: 0; font-size: 15px; line-height: 1.45; color: var(--fg-2); }

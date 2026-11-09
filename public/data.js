@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-08"
+  "updated": "2026-11-09"
  },
  "players": [
   {
@@ -502,10 +502,22 @@ window.BOLLITI = {
      "59-71"
     ],
     "moments": [
-     "Sovico subito sul +10 dopo pochi minuti",
-     "Reazione d'orgoglio nel secondo quarto, ma 30-46 all'intervallo",
-     "Ogni volta a una cifra di distanza, una tripla di Sovico ricaccia indietro i Bolliti",
-     "Terzo quarto pari e ultimo vinto 15-11"
+     {
+      "q": "Q1",
+      "text": "Sovico parte forte ed è subito sul +10 dopo pochi minuti."
+     },
+     {
+      "q": "Q2",
+      "text": "Reazione d'orgoglio dei Bolliti, ma all'intervallo è 30-46."
+     },
+     {
+      "q": "Q3",
+      "text": "Terzo quarto pari, 14-14: ogni volta che i Bolliti si avvicinano, una tripla di Sovico li ricaccia indietro."
+     },
+     {
+      "q": "Q4",
+      "text": "Ultimo quarto vinto 15-11, ma il distacco era troppo."
+     }
     ],
     "opponent_3pt_made": 12,
     "team_photo": "/img/foto/partita-1.jpg",
@@ -756,11 +768,22 @@ window.BOLLITI = {
      "63-59"
     ],
     "moments": [
-     "Partenza fortissima: 13-2",
-     "Blackout con parziale di 15-0 subito in tre minuti e mezzo, 6 triple avversarie a cavallo dei primi due quarti",
-     "Rimonta fino al 27-30 dell'intervallo",
-     "Punto a punto nel secondo tempo, 43-43 dopo tre quarti",
-     "Strappo finale di Capitan Bobby con 3 canestri da sotto"
+     {
+      "q": "Q1",
+      "text": "Partenza fortissima: 13-2."
+     },
+     {
+      "q": "Q2",
+      "text": "Blackout: parziale di 15-0 subito in tre minuti e mezzo, con 6 triple avversarie a cavallo dei primi due quarti. Poi la rimonta fino al 27-30 dell'intervallo."
+     },
+     {
+      "q": "Q3",
+      "text": "Punto a punto: 43-43 dopo tre quarti."
+     },
+     {
+      "q": "Q4",
+      "text": "Strappo finale di Capitan Bobby con 3 canestri da sotto: prima vittoria stagionale."
+     }
     ],
     "opponent_3pt_made": null,
     "team_photo": "/img/foto/partita-2.jpg",
@@ -926,11 +949,22 @@ window.BOLLITI = {
      "64-54"
     ],
     "moments": [
-     "Partenza decisa, segnando da sotto e da fuori: 21-13 dopo il primo quarto",
-     "Massimo vantaggio all'intervallo, 39-22",
-     "Calolzio rientra fino a -8 nell'ultimo quarto con palle rubate e triple",
-     "Due minuti finali da horror contro la pressione, ma +10 finale",
-     "Quasi tutta la panchina a segno"
+     {
+      "q": "Q1",
+      "text": "Partenza decisa, segnando da sotto e da fuori: 21-13 dopo il primo quarto."
+     },
+     {
+      "q": "Q2",
+      "text": "Massimo vantaggio all'intervallo: 39-22."
+     },
+     {
+      "q": "Q3",
+      "text": "Il vantaggio regge: 52-36 dopo tre quarti."
+     },
+     {
+      "q": "Q4",
+      "text": "Calolzio rientra fino a -8 con palle rubate e triple, poi due minuti finali da horror contro la pressione. Ma finisce +10, con quasi tutta la panchina a segno."
+     }
     ],
     "opponent_3pt_made": null,
     "team_photo": "/img/foto/partita-3.jpg",
@@ -1102,10 +1136,26 @@ window.BOLLITI = {
      "74-81"
     ],
     "moments": [
-     "Sotto di 10 nel secondo quarto, break e rientro a -2 all'intervallo",
-     "Zona 3-2 di Coach Diego nel terzo quarto: primo vantaggio, 55-52 a 10' dalla fine",
-     "68 pari, avversari con la palla della vittoria",
-     "Tripla di Cape in apertura di supplementare, poi solo la tripla di Ragno Violino"
+     {
+      "q": "Q1",
+      "text": "Triuggio parte meglio: 13-21 dopo il primo quarto."
+     },
+     {
+      "q": "Q2",
+      "text": "Sotto di 10, poi il break e il rientro a -2 all'intervallo."
+     },
+     {
+      "q": "Q3",
+      "text": "La zona 3-2 di Coach Diego vale il primo vantaggio: 55-52 a 10' dalla fine."
+     },
+     {
+      "q": "Q4",
+      "text": "68 pari, con gli avversari che hanno la palla della vittoria."
+     },
+     {
+      "q": "S",
+      "text": "Tripla di Cape in apertura di supplementare, poi solo la tripla di Ragno Violino."
+     }
     ],
     "opponent_3pt_made": 13,
     "team_photo": "/img/foto/partita-4.jpg",

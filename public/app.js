@@ -316,7 +316,21 @@
     });
     var andamentoHtml = '<section class="card"><span class="lbl">Andamento</span>' + quartersTable(g) + '<span class="small" style="font-size:12px;margin-top:6px">Scarto a fine periodo</span><div class="periods" style="--n:' + cols.length + '">' + cols.join('') + '</div></section>';
 
-    if (g.recap && g.recap.moments && g.recap.moments.length) {
+    var mq = g.recap && g.recap.moments && g.recap.moments.length && g.recap.moments.every(function (m) { return m.q; });
+    if (mq) {
+      // racconto quarto per quarto con il punteggio progressivo
+      var rb = 0, ro = 0;
+      h += '<section class="card" style="gap:4px"><span class="lbl" style="margin-bottom:12px">Quarto per quarto</span>' +
+        g.quarters.bolliti.map(function (x, i) {
+          var y = g.quarters.opponent[i]; rb += x; ro += y;
+          var d = rb - ro, name = periodName(i), m = g.recap.moments.filter(function (mm) { return mm.q === name; })[0];
+          var n = g.quarters.bolliti.length, lab = i === n - 1 ? 'finale' : i === 1 ? 'intervallo' : i < 4 ? 'fine ' + (i + 1) + '° quarto' : 'fine supplementare';
+          return '<div class="qstep"><span class="mk"><span class="d">' + esc(name) + '</span><i></i></span><div class="qbody">' +
+            '<div class="qpart"><span class="d' + (d > 0 ? ' gold' : '') + '">' + rb + '–' + ro + '</span><span class="small">' + lab + '</span></div>' +
+            (m ? '<p>' + esc(m.text) + '</p>' : '') + '</div></div>';
+        }).join('') +
+        igLink(g.recap.instagram_post, igOk(g.recap.instagram_post) ? 'Il resoconto completo su Instagram' : 'I resoconti su Instagram') + '</section>';
+    } else if (g.recap && g.recap.moments && g.recap.moments.length) {
       h += '<section class="card" style="gap:4px"><span class="lbl" style="margin-bottom:10px">Momenti chiave</span>' +
         g.recap.moments.map(function (m) { return '<div class="moment"><span class="mk"><span class="d">' + esc(m.q || '•') + '</span><i></i></span><p>' + esc(m.text || m) + '</p></div>'; }).join('') +
         igLink(g.recap.instagram_post, igOk(g.recap.instagram_post) ? 'Il resoconto completo su Instagram' : 'I resoconti su Instagram') + '</section>';
