@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-09"
+  "updated": "2026-11-10"
  },
  "players": [
   {
@@ -1748,8 +1748,7 @@ window.BOLLITI = {
    "photo": "/img/foto/banchetto-1.jpg",
    "gallery": [
     "/img/foto/banchetto-1-2.jpg",
-    "/img/foto/banchetto-1-3.jpg",
-    "/img/foto/banchetto-1-4.jpg"
+    "/img/foto/banchetto-1-3.jpg"
    ]
   },
   {
@@ -1837,170 +1836,193 @@ window.BOLLITI = {
    "chef": "enri",
    "chosen_by": "sceriffo",
    "judge": "luchi",
-   "status": "in attesa del post Instagram",
-   "menu": null,
-   "vote": null,
+   "menu": {
+    "pizza": [
+     "pizza alle verdure",
+     "pizza al salamino"
+    ],
+    "primo": [
+     "lasagne bianche alle verdure",
+     "lasagne alla genovese con patate e cornetti"
+    ],
+    "dolce": [
+     "torte di pasticceria, tra cui quella al limone"
+    ],
+    "bevande": [
+     "birra",
+     "Coca-Cola",
+     "vino Novera"
+    ]
+   },
+   "vote": 9,
    "vote_label": null,
-   "instagram_post": null
+   "instagram_post": "https://www.instagram.com/p/Dfh4wmeEZ7V/",
+   "tags": [
+    "lasagne",
+    "torta al limone"
+   ],
+   "judge_highlight": "lasagne alle verdure, molto saporite e dal gusto deciso; torna la torta al limone",
+   "judge_minus": "meno originale dei banchetti precedenti",
+   "photo": "/img/foto/banchetto-4.jpg"
   }
  ],
  "standings": {
-  "updated": "2026-11-03",
-  "after_round": 5,
+  "updated": "2026-11-10",
+  "after_round": 6,
   "source": "FIP – Dettaglio giornata, DR3 girone C",
   "rows": [
    {
     "pos": 1,
     "team": "Basket Sovico",
-    "pts": 10,
-    "g": 5,
-    "w": 5,
+    "pts": 12,
+    "g": 6,
+    "w": 6,
     "l": 0,
-    "pf": 338,
-    "pa": 266,
-    "us": false
-   },
-   {
-    "pos": 2,
-    "team": "D'Avino Mandello",
-    "pts": 8,
-    "g": 5,
-    "w": 4,
-    "l": 1,
-    "pf": 293,
-    "pa": 273,
-    "us": false
-   },
-   {
-    "pos": 3,
-    "team": "Lambers Triuggio",
-    "pts": 8,
-    "g": 5,
-    "w": 4,
-    "l": 1,
-    "pf": 326,
-    "pa": 255,
-    "us": false
-   },
-   {
-    "pos": 4,
-    "team": "Basket Biassono",
-    "pts": 8,
-    "g": 5,
-    "w": 4,
-    "l": 1,
-    "pf": 311,
-    "pa": 265,
-    "us": false
-   },
-   {
-    "pos": 5,
-    "team": "Bolliti Almenno",
-    "pts": 6,
-    "g": 5,
-    "w": 3,
-    "l": 2,
-    "pf": 327,
-    "pa": 325,
-    "us": true
-   },
-   {
-    "pos": 6,
-    "team": "Aurora S. Francesco",
-    "pts": 6,
-    "g": 5,
-    "w": 3,
-    "l": 2,
-    "pf": 307,
-    "pa": 268,
-    "us": false
-   },
-   {
-    "pos": 7,
-    "team": "B3 Basket Mapello",
-    "pts": 6,
-    "g": 5,
-    "w": 3,
-    "l": 2,
-    "pf": 316,
-    "pa": 290,
-    "us": false
-   },
-   {
-    "pos": 8,
-    "team": "Campagnola Don Bosco",
-    "pts": 6,
-    "g": 5,
-    "w": 3,
-    "l": 2,
-    "pf": 295,
-    "pa": 279,
-    "us": false
-   },
-   {
-    "pos": 9,
-    "team": "Carpe Diem Basket",
-    "pts": 4,
-    "g": 5,
-    "w": 2,
-    "l": 3,
-    "pf": 276,
+    "pf": 409,
     "pa": 326,
     "us": false
    },
    {
-    "pos": 10,
-    "team": "G.S. Due VI Galbiate",
-    "pts": 2,
-    "g": 5,
-    "w": 1,
+    "pos": 2,
+    "team": "Basket Biassono",
+    "pts": 10,
+    "g": 6,
+    "w": 5,
+    "l": 1,
+    "pf": 372,
+    "pa": 323,
+    "us": false
+   },
+   {
+    "pos": 3,
+    "team": "D'Avino Mandello",
+    "pts": 8,
+    "g": 6,
+    "w": 4,
+    "l": 2,
+    "pf": 346,
+    "pa": 348,
+    "us": false
+   },
+   {
+    "pos": 4,
+    "team": "B3 Basket Mapello",
+    "pts": 8,
+    "g": 6,
+    "w": 4,
+    "l": 2,
+    "pf": 378,
+    "pa": 350,
+    "us": false
+   },
+   {
+    "pos": 5,
+    "team": "Lambers Triuggio",
+    "pts": 8,
+    "g": 6,
+    "w": 4,
+    "l": 2,
+    "pf": 386,
+    "pa": 317,
+    "us": false
+   },
+   {
+    "pos": 6,
+    "team": "Campagnola Don Bosco",
+    "pts": 8,
+    "g": 6,
+    "w": 4,
+    "l": 2,
+    "pf": 353,
+    "pa": 322,
+    "us": false
+   },
+   {
+    "pos": 7,
+    "team": "Bolliti Almenno",
+    "pts": 6,
+    "g": 6,
+    "w": 3,
+    "l": 3,
+    "pf": 385,
+    "pa": 386,
+    "us": true
+   },
+   {
+    "pos": 8,
+    "team": "Aurora S. Francesco",
+    "pts": 6,
+    "g": 6,
+    "w": 3,
+    "l": 3,
+    "pf": 350,
+    "pa": 326,
+    "us": false
+   },
+   {
+    "pos": 9,
+    "team": "Rhinos Robbiate",
+    "pts": 4,
+    "g": 6,
+    "w": 2,
     "l": 4,
-    "pf": 291,
-    "pa": 330,
+    "pf": 415,
+    "pa": 400,
+    "us": false
+   },
+   {
+    "pos": 10,
+    "team": "ARS Rovagnate",
+    "pts": 4,
+    "g": 6,
+    "w": 2,
+    "l": 4,
+    "pf": 364,
+    "pa": 419,
     "us": false
    },
    {
     "pos": 11,
-    "team": "Rhinos Robbiate",
-    "pts": 2,
-    "g": 5,
-    "w": 1,
+    "team": "Pol. Besanese",
+    "pts": 4,
+    "g": 6,
+    "w": 2,
     "l": 4,
-    "pf": 341,
+    "pf": 364,
     "pa": 364,
     "us": false
    },
    {
     "pos": 12,
-    "team": "ARS Rovagnate",
-    "pts": 2,
-    "g": 5,
-    "w": 1,
+    "team": "Carpe Diem Basket",
+    "pts": 4,
+    "g": 6,
+    "w": 2,
     "l": 4,
-    "pf": 299,
-    "pa": 355,
+    "pf": 336,
+    "pa": 397,
     "us": false
    },
    {
     "pos": 13,
-    "team": "Pol. Besanese",
+    "team": "G.S. Due VI Galbiate",
     "pts": 2,
-    "g": 5,
+    "g": 6,
     "w": 1,
-    "l": 4,
-    "pf": 289,
-    "pa": 311,
+    "l": 5,
+    "pf": 355,
+    "pa": 395,
     "us": false
    },
    {
     "pos": 14,
     "team": "Pol. Monticellese",
     "pts": 0,
-    "g": 5,
+    "g": 6,
     "w": 0,
-    "l": 5,
-    "pf": 242,
-    "pa": 344,
+    "l": 6,
+    "pf": 278,
+    "pa": 418,
     "us": false
    }
   ]
@@ -2039,14 +2061,13 @@ window.BOLLITI = {
   "banchetto-1",
   "banchetto-1-2",
   "banchetto-1-3",
-  "banchetto-1-4",
   "banchetto-2",
   "banchetto-2-2",
   "banchetto-2-3",
   "banchetto-2-4",
   "banchetto-3",
+  "banchetto-4",
   "merch-felpa",
-  "merch-pantalone",
   "partita-1",
   "partita-2",
   "partita-3",
