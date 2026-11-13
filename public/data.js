@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-10"
+  "updated": "2026-11-13"
  },
  "players": [
   {
@@ -183,9 +183,10 @@ window.BOLLITI = {
    "round": 7,
    "date": "2026-11-13",
    "time": "21:30",
-   "home": true,
+   "home": false,
    "opponent": "Rhinos Robbiate",
-   "venue": "Palestra Polivalente, Almenno S.S."
+   "venue": "Palestra Montello, Merate",
+   "rescheduled": true
   },
   {
    "round": 8,
@@ -289,9 +290,10 @@ window.BOLLITI = {
    "round": 20,
    "date": "2027-03-05",
    "time": "21:30",
-   "home": false,
+   "home": true,
    "opponent": "Rhinos Robbiate",
-   "venue": "Palestra Montello, Merate"
+   "venue": "Palestra Polivalente, Almenno S.S.",
+   "rescheduled": true
   },
   {
    "round": 21,
