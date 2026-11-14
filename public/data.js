@@ -1778,7 +1778,7 @@ window.BOLLITI = {
      "p3": 1,
      "ft": 0,
      "pf": 2,
-     "ejection": 1
+     "technical": 1
     },
     {
      "p": "betti",
@@ -1901,7 +1901,7 @@ window.BOLLITI = {
    {
     "round": 7,
     "p": "santo",
-    "type": "ejection",
+    "type": "technical",
     "owes": "banchetto",
     "status": "dovuta"
    }
