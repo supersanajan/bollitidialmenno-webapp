@@ -29,7 +29,7 @@ window.BOLLITI = {
    "Lambers Triuggio": "Lambers",
    "Pol. Monticellese": "Monticellese"
   },
-  "updated": "2026-11-13"
+  "updated": "2026-11-14"
  },
  "players": [
   {
@@ -1680,6 +1680,193 @@ window.BOLLITI = {
     "team_photo": "/img/foto/partita-6.jpg",
     "instagram_post": "https://www.instagram.com/p/DfaOVAXkUmK/"
    }
+  },
+  {
+   "round": 7,
+   "date": "2026-11-13",
+   "home": false,
+   "opponent": "Rhinos Robbiate",
+   "score": {
+    "bolliti": 52,
+    "opponent": 49
+   },
+   "result": "W",
+   "overtime": false,
+   "quarters": {
+    "bolliti": [
+     10,
+     18,
+     11,
+     13
+    ],
+    "opponent": [
+     13,
+     7,
+     9,
+     20
+    ]
+   },
+   "bench_as_staff": [],
+   "stats": [
+    {
+     "p": "ragno-violino",
+     "n": 7,
+     "s": true,
+     "pts": 12,
+     "p2": 1,
+     "p3": 3,
+     "ft": 1,
+     "pf": 1
+    },
+    {
+     "p": "pizza",
+     "n": 8,
+     "s": false,
+     "pts": 9,
+     "p2": 2,
+     "p3": 1,
+     "ft": 2,
+     "pf": 4
+    },
+    {
+     "p": "il-grigio",
+     "n": 9,
+     "s": true,
+     "pts": 6,
+     "p2": 0,
+     "p3": 1,
+     "ft": 3,
+     "pf": 1
+    },
+    {
+     "p": "guala",
+     "n": 10,
+     "s": true,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "ft": 0,
+     "pf": 1
+    },
+    {
+     "p": "bobby",
+     "n": 11,
+     "s": false,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 1
+    },
+    {
+     "p": "wade",
+     "n": 13,
+     "s": false,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 0,
+     "dnp": true
+    },
+    {
+     "p": "santo",
+     "n": 17,
+     "s": false,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "ft": 0,
+     "pf": 2,
+     "ejection": 1
+    },
+    {
+     "p": "betti",
+     "n": 19,
+     "s": true,
+     "pts": 3,
+     "p2": 0,
+     "p3": 1,
+     "ft": 0,
+     "pf": 2
+    },
+    {
+     "p": "enri",
+     "n": 20,
+     "s": false,
+     "pts": 0,
+     "p2": 0,
+     "p3": 0,
+     "ft": 0,
+     "pf": 0
+    },
+    {
+     "p": "tia",
+     "n": 25,
+     "s": true,
+     "pts": 12,
+     "p2": 6,
+     "p3": 0,
+     "ft": 0,
+     "pf": 2
+    },
+    {
+     "p": "josia",
+     "n": 27,
+     "s": false,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "ft": 0,
+     "pf": 3
+    },
+    {
+     "p": "giannino",
+     "n": 33,
+     "s": false,
+     "pts": 2,
+     "p2": 1,
+     "p3": 0,
+     "ft": 0,
+     "pf": 1
+    }
+   ],
+   "app": null,
+   "recap": {
+    "source": "racconto di Jan (caption Instagram non ancora disponibile)",
+    "headline": "Guala, tripla a 6 secondi dalla fine: vittoria sofferta a Merate",
+    "running_score": [
+     "10-13",
+     "28-20",
+     "39-29",
+     "52-49"
+    ],
+    "moments": [
+     {
+      "q": "Q1",
+      "text": "Partenza contratta: Rhinos avanti 13-10 dopo dieci minuti, con 6 punti di Tia a tenere a galla i Bolliti."
+     },
+     {
+      "q": "Q2",
+      "text": "Il quarto migliore: 18-7 con le triple di Pizza, Santo e Ragno Violino, e all'intervallo è 28-20."
+     },
+     {
+      "q": "Q3",
+      "text": "Si segna poco da entrambe le parti: la tripla di Betti chiude il quarto sul 39-29."
+     },
+     {
+      "q": "Q4",
+      "text": "I Rhinos ne fanno 20 nell'ultimo quarto e riprendono il 49 pari. A 23 secondi dalla fine timeout Bolliti: palla che gira dentro e fuori, scarico per Guala e tripla del sorpasso a 6 secondi dalla sirena. Dopo il loro timeout i Rhinos non segnano: 52-49. Il regalo di compleanno, Guala se l'è fatto da solo."
+     }
+    ],
+    "opponent_3pt_made": null,
+    "team_photo": "/img/foto/partita-7.jpg",
+    "instagram_post": null,
+    "gallery_note": "Il festeggiato della serata: Guala.",
+    "gallery": [
+     "/img/foto/partita-7-2.jpg"
+    ]
+   }
   }
  ],
  "discipline": {
@@ -1708,6 +1895,13 @@ window.BOLLITI = {
     "round": 5,
     "p": "enri",
     "type": "technical",
+    "owes": "banchetto",
+    "status": "dovuta"
+   },
+   {
+    "round": 7,
+    "p": "santo",
+    "type": "ejection",
     "owes": "banchetto",
     "status": "dovuta"
    }
@@ -2076,6 +2270,8 @@ window.BOLLITI = {
   "partita-4",
   "partita-5",
   "partita-6",
+  "partita-7",
+  "partita-7-2",
   "sponsor-edil-damano",
   "sponsor-la-fioreria"
  ]

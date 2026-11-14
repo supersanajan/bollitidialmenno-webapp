@@ -362,6 +362,14 @@
     if (g.recap && g.recap.opponent_3pt_made) {
       h += '<section class="card" style="flex-direction:row;align-items:center"><span class="d" style="font-size:54px">' + g.recap.opponent_3pt_made + '</span><span style="font-size:15px;line-height:1.4;color:var(--fg-2)">triple segnate da ' + esc(short(g.opponent)) + '.</span></section>';
     }
+    // foto extra della serata, in fondo alla partita
+    var gx = (g.recap && g.recap.gallery) || [];
+    if (gx.length) {
+      h += '<section class="card"><span class="lbl">Dopo la sirena' + (gx.length > 1 ? ' · ' + gx.length + ' foto' : '') + '</span>' +
+        '<div class="gallery post' + (gx.length === 1 ? ' one' : '') + '" role="list">' +
+        gx.map(function (src, i) { return '<button class="gthumb" type="button" role="listitem" data-zoom="' + esc(src) + '" aria-label="Apri la foto ' + (i + 1) + ' di ' + gx.length + '"><img src="' + esc(src) + '" alt="" loading="lazy"></button>'; }).join('') + '</div>' +
+        (g.recap.gallery_note ? '<span class="small">' + esc(g.recap.gallery_note) + '</span>' : '') + '</section>';
+    }
     return h;
   }
 
